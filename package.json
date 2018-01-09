@@ -1,0 +1,15 @@
+{
+  "name": "Forpost",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-jshint": "latest",
+    "grunt-sass": "latest",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "latest",
+    "grunt-remove-logging": "latest",
+    "grunt-string-replace": "latest"
+  }
+}

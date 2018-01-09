@@ -1,0 +1,109 @@
+/* =========================
+   Fonts
+   =========================*/
+
+body { font: normal 15px $font, Helvetica; color:#fff; line-height: 1; letter-spacing: 0.6px; -ms-overflow-style: scrollbar; }
+body * { -webkit-font-smoothing: antialiased; text-shadow: 0 1px 0 rgba(0,0,0,0.01); }
+
+
+.title-1 {
+    margin-bottom: 15px;
+    font-size: 60px;
+    line-height: 85px;
+    font-family: $fontSbold;
+
+    span {
+        color: $yellow;
+    }
+}
+
+.title-2 {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    font-family: $fontSbold;
+}
+
+a {
+    color: #fff;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+p {
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 7px;
+}
+
+.text-o {
+    opacity: 0.5;
+}
+
+@media (min-width: 1025px) and (max-height: 800px){
+
+    .title-1 {
+        font-size: 50px !important;
+        line-height: 63px !important;
+    }
+}
+
+@include tablet {
+
+    .title-1 {
+        font-size: 40px !important;
+        line-height: 53px !important;
+        margin-bottom: 10px;
+    }
+}
+
+@include mobile {
+
+    .title-1 {
+        font-size: 30px !important;
+        line-height: 45px !important;
+    }
+}
+
+@font-face {
+    font-family: "MyriadPro-Regular";
+    src: url("fonts/MyriadPro-Regular.eot");
+    src: url("fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"),
+         url("fonts/MyriadPro-Regular.woff") format("woff"),
+         url("fonts/MyriadPro-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyriadPro-SemiBold";
+    src: url("fonts/MyriadPro-Semibold.eot");
+    src: url("fonts/MyriadPro-Semibold.eot?#iefix") format("embedded-opentype"),
+         url("fonts/MyriadPro-Semibold.woff") format("woff"),
+         url("fonts/MyriadPro-Semibold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MyriadPro-Bold";
+    src: url("fonts/MyriadPro-Bold.eot");
+    src: url("fonts/MyriadPro-Bold.eot?#iefix") format("embedded-opentype"),
+         url("fonts/MyriadPro-Bold.woff") format("woff"),
+         url("fonts/MyriadPro-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "MyriadPro-Light";
+    src: url("fonts/MyriadPro-Light.eot");
+    src: url("fonts/MyriadPro-Light.eot?#iefix") format("embedded-opentype"),
+         url("fonts/MyriadPro-Light.woff") format("woff"),
+         url("fonts/MyriadPro-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
