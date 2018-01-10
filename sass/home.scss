@@ -15,6 +15,10 @@
 		margin-bottom: 0;
 	}
 
+	.content-wrap {
+		z-index: 100;
+	}
+
 	@include mid {
 
 		.title-1 {
@@ -293,7 +297,7 @@
 @media (max-width: 660px){
 	
 	.logo-team {
-		top: 140px;
+		top: 132px;
 	}
 
 	.home-page {
@@ -316,7 +320,8 @@
 		.btn-reg {
 			@include border-rad(0);
 			width: auto !important;
-			position: absolute;
+			position: fixed;
+			z-index: 100;
 			bottom: 0;
 			left: -25px;
 			right: -25px;

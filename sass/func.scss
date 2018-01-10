@@ -9,6 +9,7 @@ $blue: #1a1c75;
 
 
 // Media Query
+$mobile-width-min : 374px;
 $mobile-width : 767px;
 $tablet-width : 1025px;
 $mid-width    : 1280px;
@@ -29,6 +30,12 @@ $mid-width    : 1280px;
 
 @mixin mobile {
     @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin mobile-min {
+    @media (max-width: #{$mobile-width-min}) {
         @content;
     }
 }
@@ -66,6 +73,10 @@ $mid-width    : 1280px;
     @include tablet {
         margin: 0 25px;
     }
+
+    @include mobile-min {
+
+    }
 }
 
 // Web Kit Hack
@@ -80,11 +91,6 @@ $mid-width    : 1280px;
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         @content;
     }
-}
-
-// Rotate
-@mixin rot($deg) {
-    transform: rotate($deg); -webkit-transform: rotate($deg); -moz-transform:rotate($deg); -o-transform:rotate($deg);
 }
 
 // Clearfix
@@ -124,12 +130,22 @@ $mid-width    : 1280px;
     }
 }
 
-// Vertiacl Align Midle
+// Transform
 @mixin transform($exp){
     -webkit-transform: $exp;
     -ms-transform: $exp;
     transform: $exp;
 } 
+
+@mixin rot($deg) {
+    transform: rotate($deg); -webkit-transform: rotate($deg); -moz-transform:rotate($deg); -o-transform:rotate($deg);
+}
+
+@mixin origin($h, $v) {
+    transform-origin: $h $v;
+    -ms-transform-origin: $h $v;
+    -webkit-transform-origin: $h $v;
+}
 
 @mixin mdl {
     display: -webkit-flexbox;

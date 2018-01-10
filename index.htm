@@ -159,8 +159,8 @@
 								<i>05</i>VISA и FIFA
 							</a>
 						</li>
-						<li>
-							<a href="login.htm">
+						<li class="btn-aut">
+							<a href="#">
 								<i>06</i>Войти
 							</a>
 						</li>
@@ -178,8 +178,6 @@
 
 			<div class="popup-content-wrap">
 				<div class="title-1">Регистрация</div>
-
-				
 
 				<form action="">
 
@@ -236,19 +234,23 @@
 						</div>
 
 						<div class="code-btns-row">
-							<div class="btn btn-2 btn-ref">
+							<div class="btn btn-2 btn-ico btn-ref">
 								<button>
 									<i></i>
+									
 									<span>
+										<img width="15" src="images/ico-ref.png" alt="">
 										отправить код повторно <b>(17 сек.)</b>
 									</span>
 								</button>
 							</div>
 
-							<div class="btn btn-2 btn-tel">
+							<div class="btn btn-2 btn-ico btn-tel">
 								<button>
 									<i></i>
+									
 									<span>
+										<img width="16" src="images/ico-tel.png" alt="">
 										изменить номер телефона
 									</span>
 								</button>
@@ -261,34 +263,139 @@
 
 		</div><!-- / Registration -->
 
+		<!-- Authorization -->
+		<div class="popup popup-aut">
+			<button class="btn-close">
+				<span></span>
+				<i></i>
+			</button>
+
+			<div class="popup-content-wrap">
+				<div class="title-1">Авторизация</div>
+
+				<form action="">
+
+					<!-- Number Form -->
+					<div class="num-form">
+						<p class="text-o">
+							Регистрируйтесь и совершайте транзакции. <br>
+							Больше транзакций - больше шансов выиграть приз.
+						</p>
+
+						<div class="form-input">
+							<input placeholder="Номер телефона" type="tel">
+						</div>
+
+						<div class="btn btn-full btn-code">
+							<button>
+								<i></i>
+								<span>Далее</span>
+							</button>
+						</div>
+
+						<a class="info-link" href="#">
+							<span>Подробные правила акции здесь</span>
+						</a>
+					</div><!-- / Number Form -->
+
+					<!-- Code Form -->
+					<div class="code-form">
+						<p class="text-o">
+							Введите код подтверждения, отправленый в <br>
+							SMS на указанный номер телефона
+						</p>
+
+						<div class="form-input">
+							<input placeholder="Код подтверждения" type="text">
+						</div>
+
+						<div class="btn btn-full">
+							<button type="submit">
+								<i></i>
+								<span>войти</span>
+							</button>
+						</div>
+
+						<div class="code-btns-row">
+							<div class="btn btn-2 btn-ico btn-ref">
+								<button>
+									<i></i>
+									
+									<span>
+										<img width="15" src="images/ico-ref.png" alt="">
+										отправить код повторно <b>(17 сек.)</b>
+									</span>
+								</button>
+							</div>
+
+							<div class="btn btn-2 btn-ico btn-tel">
+								<button>
+									<i></i>
+									
+									<span>
+										<img width="16" src="images/ico-tel.png" alt="">
+										изменить номер телефона
+									</span>
+								</button>
+							</div>
+						</div>
+					</div><!-- / Code Form -->
+				</form>
+			</div>
+		</div><!-- / Authorization -->
+
 		<script>
 			window.addEventListener("load", ()=> {
+				let mobile = window.innerWidth < 767;
 				let btnMenu = document.querySelector(".btn-menu");
 				let btnReg = document.querySelector(".btn-reg");
-				let btnCode = document.querySelector(".btn-code");
+				let btnAut = document.querySelector(".btn-aut");
+				let btnCode = document.querySelectorAll(".btn-code");
 				let btnClose = document.querySelectorAll(".btn-close");
 
 				let body = document.querySelector("body");
 				let popupOpen = document.querySelector(".popup.open");
 				let popupReg = document.querySelector(".popup-reg");
+				let popupAut = document.querySelector(".popup-aut");
 
 				btnMenu.addEventListener("click", ()=> {
 					body.classList.toggle("menu-open");
 				});
-
+				
+				// Registration
 				btnReg.addEventListener("click", ()=> {
-					popupReg.classList.add("open");
-					body.classList.add("popup-open");
+					if (!mobile){
+						popupReg.classList.add("open");
+						body.classList.add("popup-open");
+					} else {
+						window.open("reg_mobile.htm");
+					}
 				});
 
-				btnCode.addEventListener("click", function(e) {
+				// Authorization
+				btnAut.addEventListener("click", ()=> {
+					if (!mobile){
+						popupAut.classList.add("open");
+						body.classList.remove("menu-open");
+						body.classList.add("popup-open");
+					} else {
+						window.open("aut_mobile.htm");
+					}
+				});		
+				
+				// Code
+				btnCode.forEach(function(btn){
+					btn.addEventListener("click", function(e) {
+						let form = this.parentNode.parentNode; 
 
-					e.preventDefault();
+						form.querySelector(".code-form").setAttribute("style", "display: block");
+						form.querySelector(".num-form").setAttribute("style", "display: none");
 
-					document.querySelector(".code-form").setAttribute("style", "display: block");
-					document.querySelector(".num-form").setAttribute("style", "display: none");
+						e.preventDefault();
+					});
 				});
-
+				
+				// Popup Close
 				btnClose.forEach(function(closeItem){
 					closeItem.addEventListener("click", function(){
 						let popup = this.parentNode;
@@ -296,8 +403,6 @@
 						body.classList.remove("popup-open");
 					});
 				});
-
-
 
 			});
 		</script>
@@ -307,3 +412,4 @@
 
 	</body>
 </html>
+

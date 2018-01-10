@@ -254,12 +254,27 @@ body {
     }
 }
 
+body.popup-mobile {
+    height: 100%;
+}
 
 .popup {
     @include trans(0.5s);
     display: none;
     background: none;
     z-index: 996;
+
+    .popup-mobile & {
+        display: block;
+        padding-bottom: 30px;
+        height: 100vh;
+        position: relative;
+
+        @include mobile {
+            height: auto;
+            min-height: 100%;
+        }
+    }
 
     @include minHeight {
         height: 600px;
@@ -286,7 +301,7 @@ body {
     }
 }
 
-.popup-reg {
+.popup-reg, .popup-aut {
 
     &.open {
         display: block;
@@ -298,6 +313,16 @@ body {
     top: 56%;
     margin: auto;
 
+    p {
+        margin-bottom: 24px;
+    }
+
+    .popup-mobile & {
+        @include transform(translateY(0));
+        padding-top: 140px;
+        top: 0;
+    }
+
     @include minHeight {
         @include transform(translateY(0));
         top: 0;
@@ -305,18 +330,56 @@ body {
     }
 
     @include mobile {
+        @include transform(translateY(0));
+        padding-top: 140px;
+        top: 0;
         width: auto;
         margin: 0 25px;
     }
 
-    p {
-        margin-bottom: 24px;
+    @include mobile-min {
+        p {
+            br {
+                display: none;
+            }
+        }
     }
 }
 
 .btn-close {
     @extend .ctrHor;
     z-index: 998;
+
+    i {
+        @include transform(translateY(-50%) translateX(-50%));
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 50%;
+        left: 50%;
+        display: block;
+
+        &:before, &:after {
+            @extend .ps;
+            left: 6px;
+            top: -1px;
+            width: 2px;
+            height: 16px;
+            background-color: #fff;
+        }
+
+        &:before {
+            @include transform(rotate(45deg));
+        }
+
+        &:after {
+            @include transform(rotate(-45deg));
+        }
+    }
+
+    @include mobile {
+        display: none;
+    }
 }
 
 .info-link {
@@ -372,5 +435,14 @@ body {
 
     .btn-tel {
         width: 44%;
+    }
+
+    @include mobile {
+        display: block;
+
+        .btn {
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
 }
