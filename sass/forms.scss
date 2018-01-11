@@ -14,7 +14,7 @@
         width: 100%;
         text-align: center;
         height: 100px;
-        line-height: 100px;
+        line-height: 100%;
         padding: 0 20px;
         font-size: 22px;
         color: #fff;
@@ -23,6 +23,7 @@
         letter-spacing: 0.8px;
         font-family: $fontSbold;
         -webkit-appearance: none; 
+
 
         &:focus {
             border-color: #fff;

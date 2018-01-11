@@ -5,6 +5,9 @@
 body { font: normal 15px $font, Helvetica; color:#fff; line-height: 1; letter-spacing: 0.6px; -ms-overflow-style: scrollbar; }
 body * { -webkit-font-smoothing: antialiased; text-shadow: 0 1px 0 rgba(0,0,0,0.01); }
 
+.title-left {
+    text-align: left;
+}
 
 .title-1 {
     margin-bottom: 15px;

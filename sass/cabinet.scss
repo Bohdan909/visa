@@ -1,0 +1,322 @@
+
+/* --------------------
+    Cabinet
+    ------------------- */   
+
+.cabinet-block {
+	@include flex(space-between);
+	padding-bottom:35px;
+	text-align: left;
+	height: 580px;
+	padding-top: 15px;
+	min-height: 600px;
+
+	.cabinet-left {
+		width: 53%;
+		padding-right: 10px;
+		border-right: 3px solid rgba(255,255,255, 0.1);
+
+		p {
+			margin-bottom: 20px;
+		}
+	}
+
+	.cabinet-right {
+		width: 47%;
+
+		.scroll-block {
+			height: 100%;
+			overflow-y: auto;
+		}
+	}
+}
+
+.cabinet-tshirt-block {
+	@include flex(flex-start);
+	margin-bottom: 10px;
+
+	.cabinet-tshirt-image {
+		width: 308px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.cabinet-chance-col {
+		padding-left: 39px;
+
+		.chance-count {
+			padding-top: 35px;
+		}
+	}
+}
+
+
+.chance-count {
+	text-align: left;
+
+	div {
+		font-size: 80px;
+		color: $yellow;
+		font-family: $fontSbold;
+		margin-bottom: 10px;
+	}
+
+	span {
+
+	}
+}
+
+
+.cabinet-check-stack {
+	width: 85%;
+	margin: auto;
+}
+
+.cabinet-check-item {
+	@include border-rad(8px);
+	position: relative;
+	height: 79px;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 0 65px 0 27px;
+	border: 2px solid rgba(255,255,255, 0.1);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	section {
+		@extend .ctrVert;
+		font-size: 0;
+
+		div, span {
+			display: inline-block;
+			height: 28px;
+			line-height: 28px;
+		}
+
+		div {	
+			position: relative;
+			font-size: 22px;
+			font-family: $fontSbold;
+			padding-right: 30px;
+
+			&:after {
+				@extend .ps;
+				@extend .circle;
+				left: auto;
+				right: 11px;
+				top: 13px;
+				width: 5px;
+				height: 5px;
+			}
+		}
+
+		span {
+			font-size: 12px;
+			color: $yellow;
+			text-transform: uppercase;
+			font-family: $fontBold;
+		}
+	}
+
+	.del {
+		position: absolute;
+		top: 19px;
+		right: 27px;
+	}
+}
+
+.del {
+	@extend .circle;
+	@extend .trans;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba(255,255,255, 0.2);
+	}
+
+	i {
+		position: absolute;
+		display: block;
+		width: 2px;
+		height: 9px;
+		top: 50%;
+		left: 50%;
+		background-color: #fff;
+	}
+
+	i:nth-child(1) {
+		@include transform(translateY(-50%) translateX(-50%) rotate(45deg));
+	}
+
+	i:nth-child(2) {
+		@include transform(translateY(-50%) translateX(-50%) rotate(135deg));
+	}
+}
+
+@include mid {
+
+	.cabinet-block {
+
+		.cabinet-left {
+			width: 520px;
+		}
+
+		.cabinet-right {
+			width: calc(100% - 520px);
+			width: -webkit-calc(100% - 520px);
+		}
+	}
+
+	.cabinet-check-stack {
+		width: 90%;
+	}
+
+	.cabinet-check-item {
+		padding: 0 55px 0 20px;
+
+		section {
+
+			div {
+				font-size: 19px;
+			}
+		}
+
+		.del {
+			right: 18px;
+		}
+	}
+}
+
+@include tablet {
+
+	.cabinet-block {
+		height: 720px;
+
+		.cabinet-left, .cabinet-right {
+			width: 50%;
+		}
+
+		.social-share {
+
+			b {
+				display: none;
+			}
+
+			ul li {
+				margin: 0 15px 0 0;
+			}
+		}
+	}
+
+	.cabinet-tshirt-block {
+		display: block;
+
+		.cabinet-chance-col {
+			@include flex(flex-start);
+			padding-left: 0;
+			margin-bottom: 20px;
+
+			.chance-count {
+				padding-top: 0;
+				margin-right: 35px;
+			}
+		}
+	}
+
+	.chance-count {
+
+		div {
+			font-size: 60px;
+		}
+	}
+
+	.cabinet-check-item {
+
+		section {
+
+			div:after {
+				display: none;
+			}
+		}
+	}
+}
+
+@include mobile {
+
+	.cabinet-block {
+		display: block;
+		height: auto;
+		padding-bottom: 85px;
+
+		.cabinet-left, .cabinet-right {
+			width: 100%;
+			border: none;
+		}
+
+		.cabinet-left {
+			padding-right: 0;
+		}
+
+		.btn-check {
+			position: fixed;
+			width: auto;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+
+			i {
+				@include border-rad(0);
+			}
+		}
+	}
+
+	.cabinet-tshirt-block {
+
+		.cabinet-tshirt-image {
+			margin: auto;
+		}
+
+		.cabinet-chance-col {
+			-webkit-justify-content: space-between;
+			justify-content: space-between;
+
+			.chance-count {
+				margin: 0;
+			}
+		}
+	}
+
+	.cabinet-check-stack {
+		width: 100%;
+		padding-top: 0;
+	}
+
+	.social-share-m {
+
+		ul {
+			@include flex(space-between);
+
+			li {
+				width: 30%;
+				margin: 0 !important;
+				
+				a {
+					@include border-rad(8px);
+					width: 100%;
+					height: 58px;
+					background: none;
+					border: 2px solid rgba(255,255,255, 0.1);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+
+}
