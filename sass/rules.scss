@@ -1,0 +1,197 @@
+
+/* --------------------
+    Rules
+    ------------------- */   
+
+
+
+.title-row {
+	@include clearfix;
+	position: relative;
+	margin-bottom: 20px;
+	min-height: 85px;
+
+	.title-1 {
+		width: 50%;
+		text-align: left;
+		margin-bottom: 0;
+	}
+}
+
+.btns-right {
+	position: absolute;
+	right: 0;
+	top: 15px;
+	z-index: 1;
+
+	.btn {
+		float: right;
+		margin-left: 10px;	
+
+		i {
+			background-color: #2a42a2;
+		}
+	}
+}    
+
+.rules-block {
+	@include flex(space-between);
+	margin: 0 -5px 35px;
+
+	.rules-item {
+		position: relative;
+		margin: 0 5px;
+		min-height: 155px;
+		padding: 29px 15px 10px 68px;
+		overflow: hidden;
+		text-align: left;
+
+		> span {
+			@extend .circle;
+			position: absolute;
+			top: 35px;
+			left: 17px;
+			white-space: nowrap;
+			line-height: 38px;
+			text-align: center;
+			font-size: 12px;
+			font-family: $fontBold;
+		}
+
+		p {
+			line-height: 30px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.text-list {
+	text-align: left;
+	margin-bottom: 20px;
+
+	li {
+		position: relative;
+		padding-left: 37px;
+		margin-bottom: 15px;
+		line-height: 32px;
+
+		&:before {
+			@extend .ps;
+			@extend .circle;
+			@include transform(translateY(-50%));
+			top: 48%;
+			left: 0;
+			width: 8px;
+			height: 8px;
+		}
+	}
+}
+
+@media (min-width: 767px) and (max-height: 720px) {
+
+	.rules-block {
+
+		.rules-item {
+			padding-top: 12px;
+
+			> span {
+				top: 14px;
+			}
+
+			p {
+				line-height: 25px;
+			}
+		}
+	}
+
+	.text-list {
+
+		li {
+			line-height: 24px;
+			margin-bottom: 7px;
+
+			&:before {
+				top: 46%;
+			}
+		}
+	}
+}
+
+@include tablet {
+
+	.title-row {
+		margin-bottom: 0;
+
+		.title-1 {
+			width: 100%;
+			margin-bottom: 25px;
+		}
+	}
+
+	.btns-right {
+		position: static;
+		margin-bottom: 15px;
+		text-align: left;
+
+
+		.btn {
+			float: none;
+			margin: 0 10px 10px 0;
+		}
+	}
+
+	.rules-block {
+		display: block;
+		margin: 0 0 35px;
+
+		.rules-item {
+			margin: 0 0 23px;
+			padding-bottom: 18px;
+			min-height: 100px;
+
+			p {
+				// @include transform(translateY(-50%));
+				// position: relative;
+				// top: 50%;
+			}
+		}
+	}
+
+	.text-list {
+
+		li {
+			line-height: 27px;
+			margin-bottom: 30px;
+
+			&:before {
+				@include transform(translateY(0));
+				top: 8px;
+			}
+		}
+	}
+}
+
+@include mobile {
+
+	.btns-right {
+
+		.btn {
+			width: 100%;
+		}
+	}
+
+	.rules-block {
+
+		.rules-item {
+			padding: 20px 10px 20px 68px;
+
+			> span {
+				top: 20px;
+			}
+
+			p {
+				line-height: 25px;
+			}
+		}
+	}
+}

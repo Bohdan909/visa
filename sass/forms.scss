@@ -88,13 +88,23 @@
     cursor: pointer;
     -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
 
-    .checkbox-text {
+    &.checkbox-ctr {
+        text-align: center;
+        display: inline-block;
+    }
+
+    .checkbox-text, .checkbox-text-b {
         display: block;
         padding-left: 40px;
         font-size: 9px;
         line-height: 13px;
         color: rgba(255,255,255,0.5);
         font-family: $fontLight;
+    }
+
+    .checkbox-text-b {
+        font-size: 15px;
+        line-height: 25px;
     }
 
     input[type="checkbox"] {
@@ -129,31 +139,11 @@
             left: 50%;
             margin: -3px 0 0 -4px;
             height: #fff;
-            background: url(../images/check.png) no-repeat 0 0;
+            background: url(../images/check.svg) no-repeat 0 0;
         }
     }
 }
 
-/* ---------------
-    Selects
-    -------------- */
-
-.select-item { width: 180px; }
-.select-item .ui-selectmenu-button { height: 24px; background: #fff; border: 1px solid #D0D0D0; width: 100% !important; outline: none;}
-.select-item .ui-selectmenu-button span.ui-selectmenu-text { line-height: 26px; padding: 0 15px 0 8px; font-size: 12px; color: #113857; font-style: italic; font-family: arial; font-weight: normal; }
-.select-item .ui-selectmenu-button .ui-icon { width: 7px; height: 4px; right: 6px; top: 50%; margin-top: -2px; background: url("../images/sprites.png") no-repeat -19px -41px; }
-.select-item .ui-selectmenu-button.ui-corner-top .ui-icon { @include rot(-180deg); }
-
-.ui-selectmenu-menu { background: #fff; text-align: left; }
-.ui-selectmenu-menu ul.ui-menu { padding:2px 0; border: 1px solid #D0D0D0; border-top: none; }
-.ui-selectmenu-menu li.ui-menu-item { padding: 5px 15px 5px 8px; color: #113857; line-height: 14px; font-size: 12px; font-family: arial; }
-.ui-selectmenu-menu li.ui-menu-item:hover { text-decoration: underline; }
-
-.ui-menu .ui-state-focus, .ui-menu .ui-state-active { margin: 0 !important; }
-
-/* ----------------
-    Perfect Scroll
-    --------------- */
 
 .scroll.ps-container > .ps-scrollbar-y-rail { width: 3px; background: #e8e5e2; }
 .scroll.ps-container > .ps-scrollbar-x-rail { display: none !important; }

@@ -317,7 +317,7 @@
 			}
 		}
 
-		.btn-reg {
+		.btn-reg, .btn-check {
 			@include border-rad(0);
 			width: auto !important;
 			position: fixed;
