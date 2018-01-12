@@ -168,31 +168,53 @@ body {
     position: absolute !important;
     display: block;
     cursor: pointer;
-    width: 65px;
-    height: 65px;
+    width: 66px;
+    height: 66px;
 
     > span {
-        @include border-rad(50%);
         display: block;
         width: 100%;
         height: 100%;
-        border: 2px solid rgba(255,255,255, 0.2);
+
+        &:after {
+            @extend .ps;
+            @include border-rad(50%);
+            width: 100%;
+            height: 100%;
+            //border: 2px solid rgba(255,255,255, 0.2);
+        }
+
+        svg {
+            @include transform(rotate(-90deg));
+        }
+    }
+
+    .menu-circle {
+        @include transition(all, 0.8s, ease-in-out);
+        stroke-dasharray: 208; 
+        stroke-dashoffset: 208;
     }
 }
+
+
+$menuHtime: 0.6s;
 
 .btn-menu {
     position: absolute;
     left: 0;
     top: 0;
 
-    i {
+    div {
+        position: absolute;
         top: 31px;
         left: 50%;
         margin-left: -9px;
     }
 
-    i, i:before, i:after {
+    i {
         @include border-rad(1px);
+        @include transition(all, $menuHtime, ease-out);
+        left: 0;
         display: block;
         position: absolute;
         width: 18px;
@@ -200,20 +222,115 @@ body {
         background: #fff;
     }
 
-    i:before, i:after {
-        @extend .ps;
-        left: 0;
+    i:nth-child(2) {
         top: -7px;
+
+        &:before, &:after {
+            @extend .ps;
+            @include transition(height, 0.2s, ease-out);
+            @include delay(0s);
+            width: 2px;
+            height: 2px;
+            top: auto;
+            left: 8px;
+            bottom: 0;
+            background-color: #fff;
+        }
+
+        &:after {
+            bottom: auto;
+            top: 0;
+        }
     }
 
-    i:after {
+    i:nth-child(3) {
         top: 7px;
     }
 
-    &.open {
-        background-color: blue;
+    i:nth-child(1) {
+        @include trans(0.2s);
+    }
+
+    .active & {
+
+        i {
+
+            &:nth-child(1) {
+                opacity: 0;
+            }
+            
+            &:nth-child(2) {
+                @include transform(translateY(7px) rotate(-45deg));
+
+                &:before, &:after {
+                    @include delay($menuHtime);
+                    transition-duration: 0.4s;
+                    -webkit-transition-duration: 0.4s;
+                    -ms-transition-duration: 0.4s;
+                    height: 10px;
+                }
+            }
+
+            &:nth-child(3) {
+                @include transform(translateY(-7px) rotate(-45deg));
+            }   
+        }
+
+        // &:nth-child(3) {
+        //     @include transform(translateY(-7px));
+        // }   
+
+        // i:nth-child(2), i:nth-child(3) {
+        //     @include transform(rotate(-90deg));
+        // }
+    }
+
+    // &.open {
+    //     background-color: blue;
+    // }
+}
+
+.no-touchevents .btn-menu-block {
+
+    &:hover  .menu-circle {
+        @include animation(menuTimer, 0.8s, ease-in-out);
+    }
+
+    &:not(.active):hover .btn-menu {
+
+        i {
+
+            &:nth-child(1) {
+                opacity: 0;
+            }
+            
+            &:nth-child(2) {
+                @include transform(translateY(7px));
+
+                &:before, &:after {
+                    @include delay($menuHtime);
+                    height: 10px;
+                }
+            }
+
+            &:nth-child(3) {
+                @include transform(translateY(-7px));
+            }   
+        }
     }
 }
+
+.no-touchevents .btn-close:hover .menu-circle {
+    @include animation(menuTimer, 0.8s, ease-in-out);
+}
+
+
+@keyframes menuTimer {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
 
 .menu-block, .popup {
     position: absolute;

@@ -20,8 +20,20 @@
 		<header id="header"> 
 			<div class="btn-menu-block">
 				<button class="btn-menu">
-					<span></span>
-					<i></i>
+					<span>
+						<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+						     <g>
+						     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+						      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+						     </g>
+						</svg>
+					</span>
+					<div>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					
 				</button>
 				<span>меню</span>
 				<div class="menu-text-close">закрыть</div>
@@ -174,7 +186,14 @@
 		<!-- Registration -->
 		<div class="popup popup-reg">
 			<button class="btn-close">
-				<span></span>
+				<span>
+					<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+					     <g>
+					     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+					      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+					     </g>
+					</svg>
+				</span>
 				<i></i>
 			</button>
 
@@ -349,6 +368,26 @@
         <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+				// let menuCir = document.querySelectorAll(".menu-circle");
+				
+				// var time = 10; 
+				// var initialOffset = '440';
+				// var i = 1
+				
+				// var interval = setInterval(function() {
+
+				// 	menuCir.forEach(function(circle){
+
+				// 		circle.setAttribute('stroke-dashoffset', initialOffset-(i*(initialOffset/time)));
+
+				// 	    if (i == time) {
+				// 	        clearInterval(interval);
+				// 	    }
+
+				// 	    i++;  
+				// 	});
+				    
+				// }, 1000);
 				
 				setTimeout(function(){
 		            document.querySelector("body").classList.add("loaded");
@@ -365,8 +404,9 @@
 				let popupReg = document.querySelector(".popup-reg");
 				let popupAut = document.querySelector(".popup-aut");
 
-				btnMenu.addEventListener("click", ()=> {
+				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
+					this.classList.toggle("active");
 				});
 				
 				// Registration

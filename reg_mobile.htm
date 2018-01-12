@@ -20,8 +20,20 @@
 		<header id="header"> 
 			<div class="btn-menu-block">
 				<button class="btn-menu">
-					<span></span>
-					<i></i>
+					<span>
+						<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+						     <g>
+						     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+						      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+						     </g>
+						</svg>
+					</span>
+					<div>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					
 				</button>
 				<span>меню</span>
 				<div class="menu-text-close">закрыть</div>
@@ -116,23 +128,23 @@
 
 					<!-- Code Form -->
 					<div class="code-form animate-wrap">
-						<p class="text-o">
+						<p class="text-o animate-slide">
 							Введите код подтверждения, отправленый в <br>
 							SMS на указанный номер телефона
 						</p>
 
-						<div class="form-input">
+						<div class="form-input animate-slide">
 							<input placeholder="Код подтверждения" type="text">
 						</div>
 
-						<div class="btn btn-full">
+						<div class="btn btn-full animate-slide">
 							<button type="submit">
 								<i></i>
 								<span>Зарегистрироваться</span>
 							</button>
 						</div>
 
-						<div class="btns-row">
+						<div class="btns-row animate-slide">
 							<div class="btn btn-2 btn-ico btn-ref">
 								<button>
 									<i></i>
@@ -179,8 +191,9 @@
 				let popupOpen = document.querySelector(".popup.open");
 				let popupReg = document.querySelector(".popup-reg");
 
-				btnMenu.addEventListener("click", ()=> {
+				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
+					this.classList.toggle("active");
 				});
 
 				btnCode.addEventListener("click", function(e) {
@@ -191,20 +204,20 @@
 				});
 
 				// Animate
-				// let animateWrap = document.querySelectorAll(".animate-wrap");
+				let animateWrap = document.querySelectorAll(".animate-wrap");
 
-				// animateWrap.forEach(function(wrapItem){
-				// 	let animateList = wrapItem.querySelectorAll(".animate-slide");
+				animateWrap.forEach(function(wrapItem){
+					let animateList = wrapItem.querySelectorAll(".animate-slide");
 					
-				// 	for (let i = 0; i < animateList){
+					for (let i = 0; i < animateList.length; i++){
+						animateList[i].setAttribute("style", "'animation-delay:" + (0.1 * i) + "s'")
+					}
+				});
 
-				// 	}
-				// });
+
 			});
 		</script>
        
 		<script src="http://localhost:35729/livereload.js"></script>
-
-
 	</body>
 </html>
