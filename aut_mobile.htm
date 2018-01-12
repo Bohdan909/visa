@@ -78,45 +78,45 @@
 		<div class="popup popup-aut">
 
 			<div class="popup-content-wrap">
-				<div class="title-1">Авторизация</div>
+				<div class="title-1 animate-slide">Авторизация</div>
 
 				<form action="">
 
 					<!-- Number Form -->
 					<div class="num-form">
-						<p class="text-o">
+						<p class="text-o animate-slide">
 							Регистрируйтесь и совершайте транзакции. <br>
 							Больше транзакций - больше шансов выиграть приз.
 						</p>
 
-						<div class="form-input">
+						<div class="form-input animate-slide">
 							<input placeholder="Номер телефона" type="tel">
 						</div>
 
-						<div class="btn btn-full btn-code">
+						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
 								<span>Далее</span>
 							</button>
 						</div>
 
-						<a class="info-link" href="#">
+						<a class="info-link animate-slide" href="#">
 							<span>Подробные правила акции здесь</span>
 						</a>
 					</div><!-- / Number Form -->
 
 					<!-- Code Form -->
 					<div class="code-form">
-						<p class="text-o">
+						<p class="text-o animate-slide">
 							Введите код подтверждения, отправленый в <br>
 							SMS на указанный номер телефона
 						</p>
 
-						<div class="form-input">
+						<div class="form-input animate-slide">
 							<input placeholder="Код подтверждения" type="text">
 						</div>
 
-						<div class="btn btn-full">
+						<div class="btn btn-full animate-slide">
 							<button type="submit">
 								<i></i>
 								<span>войти</span>
@@ -124,7 +124,7 @@
 						</div>
 
 						<div class="btns-row">
-							<div class="btn btn-2 btn-ico btn-ref">
+							<div class="btn btn-2 btn-ico btn-ref animate-slide">
 								<button>
 									<i></i>
 									
@@ -135,7 +135,7 @@
 								</button>
 							</div>
 
-							<div class="btn btn-2 btn-ico btn-tel">
+							<div class="btn btn-2 btn-ico btn-tel animate-slide">
 								<button>
 									<i></i>
 									
@@ -152,8 +152,14 @@
 
 		</div><!-- / Registration -->
 
+        <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+
+				setTimeout(function(){
+		            document.querySelector("body").classList.add("loaded");
+		        }, 500);
+
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnCode = document.querySelectorAll(".btn-code");

@@ -358,9 +358,9 @@ $mid-width    : 1280px;
 
 // Animation
 @mixin animation($name, $duration, $func){
-    animation: $name $duration $func;
-    -ms-animation: $name $duration $func;
-    -webkit-animation: $name $duration $func;
+    animation: $name $duration $func forwards;
+    -ms-animation: $name $duration $func forwards;
+    -webkit-animation: $name $duration $func forwards;
 }
 
 @mixin animation-d($name, $duration, $func, $delay){

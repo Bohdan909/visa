@@ -37,7 +37,7 @@
 		<div class="text-page">
 			<div class="socket content">
 				
-				<div class="title-1 title-left">Личный кабинет</div>
+				<div class="title-1 title-left animate-slide">Личный кабинет</div>
 
 				<div class="cabinet-block">
 					<div class="cabinet-left">
@@ -92,7 +92,7 @@
 					<div class="cabinet-right">
 						<div class="cabinet-scroll scroll-block">
 							<div class="cabinet-check-stack">
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 15 января</div>
 										<span>1 шанс : d8320</span>
@@ -104,7 +104,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 14 января</div>
 										<span>1 шанс : d8320</span>
@@ -116,7 +116,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 13 января</div>
 										<span>1 шанс : d8320</span>
@@ -128,7 +128,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 12 января</div>
 										<span>1 шанс : d8320</span>
@@ -140,7 +140,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 11 января</div>
 										<span>1 шанс : d8320</span>
@@ -152,7 +152,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 10 января</div>
 										<span>1 шанс : d8320</span>
@@ -176,7 +176,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 11 января</div>
 										<span>1 шанс : d8320</span>
@@ -542,8 +542,13 @@
 			</div>
 		</div><!-- / Add Check -->
 
+        <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+				setTimeout(function(){
+		            document.querySelector("body").classList.add("loaded");
+		        }, 500);
+		        
 				let mobile = window.innerWidth < 767;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnCode = document.querySelectorAll(".btn-code");

@@ -1,0 +1,79 @@
+
+
+/* --------------------
+    Animations
+    ------------------- */  
+
+.animate-slide {
+    opacity: 0;   
+
+    .loaded & {
+        @include animation(animateSlide, 1s, ease-out);
+    }
+}
+
+
+@keyframes animateSlide {
+    0% {
+        transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animateSlide {
+    0% {
+        transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+////////////// TIMING /////////
+
+// Home
+.title-wrap p { @include a-delay(0.2s); }
+
+.adv-list {
+
+    li:nth-child(1) { @include a-delay(0.35s); }
+    li:nth-child(2) { @include a-delay(0.50s); }
+    li:nth-child(3) { @include a-delay(0.60s); }
+}
+
+.home-page .btn-reg { @include a-delay(0.7s); }
+
+// Popups
+// .popup-aut, .popup-reg {
+
+//     p { @include a-delay(0.2s); }
+//     .form-input { @include a-delay(0.35s); }
+//     .btn { @include a-delay(0.45s); }
+//     .info-link { @include a-delay(0.65s); }
+// }
+
+//  .popup-reg {
+
+//      .popup-reg
+//  }
+
+
+// No Javascript
+.no-js {
+
+    .animate-slide {
+        opacity: 1 !important;
+    }
+}

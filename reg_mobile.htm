@@ -76,22 +76,22 @@
 		<div class="popup popup-reg">
 
 			<div class="popup-content-wrap">
-				<div class="title-1">Регистрация</div>
+				<div class="title-1 animate-slide">Регистрация</div>
 
 				<form action="">
 
 					<!-- Number Form -->
-					<div class="num-form">
-						<p class="text-o">
+					<div class="num-form animate-wrap">
+						<p class="text-o animate-slide">
 							Регистрируйтесь и совершайте транзакции. <br>
 							Больше транзакций - больше шансов выиграть приз.
 						</p>
 
-						<div class="form-input">
+						<div class="form-input animate-slide">
 							<input placeholder="Номер телефона" type="tel">
 						</div>
 
-						<label class="checkbox">
+						<label class="checkbox animate-slide">
 							<input type="checkbox">
 							<div class="custom-checkbox"></div>
 							<div class="checkbox-text">
@@ -102,20 +102,20 @@
 							</div>
 						</label>
 
-						<div class="btn btn-full btn-code">
+						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
 								<span>Далее</span>
 							</button>
 						</div>
 
-						<a class="info-link" href="">
+						<a class="info-link animate-slide" href="">
 							<span>Подробные правила акции здесь</span>
 						</a>
 					</div><!-- / Number Form -->
 
 					<!-- Code Form -->
-					<div class="code-form">
+					<div class="code-form animate-wrap">
 						<p class="text-o">
 							Введите код подтверждения, отправленый в <br>
 							SMS на указанный номер телефона
@@ -162,8 +162,14 @@
 
 		</div><!-- / Registration -->
 
+        <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+
+				setTimeout(function(){
+		            document.querySelector("body").classList.add("loaded");
+		        }, 500);
+
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnCode = document.querySelector(".btn-code");
@@ -173,11 +179,9 @@
 				let popupOpen = document.querySelector(".popup.open");
 				let popupReg = document.querySelector(".popup-reg");
 
-
 				btnMenu.addEventListener("click", ()=> {
 					body.classList.toggle("menu-open");
 				});
-				
 
 				btnCode.addEventListener("click", function(e) {
 					e.preventDefault();
@@ -185,6 +189,17 @@
 					document.querySelector(".code-form").setAttribute("style", "display: block");
 					document.querySelector(".num-form").setAttribute("style", "display: none");
 				});
+
+				// Animate
+				// let animateWrap = document.querySelectorAll(".animate-wrap");
+
+				// animateWrap.forEach(function(wrapItem){
+				// 	let animateList = wrapItem.querySelectorAll(".animate-slide");
+					
+				// 	for (let i = 0; i < animateList){
+
+				// 	}
+				// });
 			});
 		</script>
        

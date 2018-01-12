@@ -436,8 +436,14 @@
 			</div>
 		</div><!-- / Add Check -->
 
+        <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+
+				setTimeout(function(){
+		            document.querySelector("body").classList.add("loaded");
+		        }, 500);
+		        
 				let mobile = window.innerWidth < 767;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnAut = document.querySelector(".btn-aut");

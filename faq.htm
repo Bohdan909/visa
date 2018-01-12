@@ -36,12 +36,12 @@
 		<!-- Page -->
 		<div class="text-page">
 			<div class="socket content">
-				<div class="title-1 title-left">
+				<div class="title-1 title-left animate-slide">
 					Вопросы и ответы
 				</div>
 
 				<div class="faq-block">
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -92,7 +92,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -109,7 +109,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -126,7 +126,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item animate-slide">
 						<div class="faq-head">
 							<span>
 								<i></i>
@@ -499,8 +499,13 @@
 			</div>
 		</div><!-- / Add Check -->
 
+        <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", ()=> {
+
+				setTimeout(function(){
+		            document.querySelector("body").classList.add("loaded");
+		        }, 500);
 
 				let mobile = window.innerWidth < 767;
 				let btnMenu = document.querySelector(".btn-menu-block");

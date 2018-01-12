@@ -9,11 +9,14 @@ body * { -webkit-font-smoothing: antialiased; text-shadow: 0 1px 0 rgba(0,0,0,0.
     text-align: left;
 }
 
+.title-1, .title-2 {
+    font-family: $fontSbold;
+}
+
 .title-1 {
     margin-bottom: 15px;
     font-size: 60px;
     line-height: 85px;
-    font-family: $fontSbold;
 
     span {
         color: $yellow;
@@ -24,7 +27,12 @@ body * { -webkit-font-smoothing: antialiased; text-shadow: 0 1px 0 rgba(0,0,0,0.
     font-size: 18px;
     line-height: 25px;
     margin-bottom: 10px;
-    font-family: $fontSbold;
+}
+
+.title-3 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 10px;
 }
 
 a {
