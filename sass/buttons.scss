@@ -3,6 +3,8 @@
     Buttons
     ------------------- */   
 
+$btnHovTime: 0.6s;
+
 .btn {
 	@include border-rad(4px);    
     display: inline-block;
@@ -13,6 +15,7 @@
     background: $blue;
     border: none;
     outline: none;
+    overflow: hidden;
 
     button, a {
     	position: relative;
@@ -24,7 +27,8 @@
     }
 
     span {
-    	@include trans(0.7s);
+    	@include transition(all, $btnHovTime, ease);
+    	@extend .not-blurry;
     	position: relative;
     	display: block;
     	line-height: 68px;
@@ -34,10 +38,23 @@
     	letter-spacing: 1.2px;
     	color: $blue;
     	text-transform: uppercase;
+
+    	&:after {
+    		@extend .ps;
+    		@include transition(all, $btnHovTime, ease);
+    		@include transform(translateX(-15px));
+    		@include delay(0s);
+    		top: 48%;
+    		right: 0;
+    		width: 20px;
+    		height: 2px;
+    		opacity: 0;
+    		background-color: $yellow;
+    	}
     }
 
     i {
-    	@include border-rad(4px);
+    	@include transition(all, $btnHovTime, ease);
     	position: absolute;
     	left: 0;
     	top: 0;
@@ -45,11 +62,37 @@
     	bottom: 0;
     	display: block;
     	background-color: $yellow;
+
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
-}    
+}  
+
+.no-touchevents .btn:hover {
+
+	i {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+
+	&:not(.btn-2) {
+	
+		span {
+			@include transform(translateX(-15px) translateZ(0) scale(1.0, 1.0));
+			color: $yellow;
+
+			&:after {
+    			@include transform(translateX(0px));
+    			@include delay(0.1s);
+    			opacity: 1;
+			}
+		}
+	}
+}
 
 .btn-2 {
 	height: 60px;
+	//background-color: $yellow;
 
 	span {
 		line-height: 60px;
@@ -78,6 +121,7 @@
 
 		img {
 			@extend .ctrVert;
+			@include transition(all, 0.5s, ease);
 			position: absolute;
 			left: 0;
 			z-index: 1;
@@ -89,7 +133,45 @@
 			text-align: left;
 		}
 	}
+
+	&.btn-ref:hover {
+
+		button, a {
+
+			img {
+				@include transform(translateY(-50%) rotate(180deg));
+			}
+		}
+	}
+
+	&.btn-tel:hover {
+
+		button, a {
+
+			img {
+				@include animation(icoTel, 0.4s, linear);
+				animation-iteration-count: 4;
+				-webkit-animation-iteration-count: 4;
+				-ms-animation-iteration-count: 4;
+			}
+		}
+	}
 }
+
+@keyframes icoTel {
+	25% {
+		@include transform(translateY(-50%) rotate(10deg));
+	}
+
+	75% {
+		@include transform(translateY(-50%) rotate(-10deg));
+	}	
+
+	100% {
+		@include transform(translateY(-50%) rotate(0deg));
+	}
+}
+
 
 .btn-reg, .btn-check {
 	width: 270px;
