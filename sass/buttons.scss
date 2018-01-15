@@ -39,17 +39,12 @@ $btnHovTime: 0.6s;
     	color: $blue;
     	text-transform: uppercase;
 
-    	&:after {
-    		@extend .ps;
-    		@include transition(all, $btnHovTime, ease);
-    		@include transform(translateX(-15px));
-    		@include delay(0s);
-    		top: 48%;
-    		right: 0;
-    		width: 20px;
-    		height: 2px;
-    		opacity: 0;
-    		background-color: $yellow;
+    	img.arrow {
+			@include transform(rotate(-90deg));
+			@include transition(all, $btnHovTime, ease);
+			position: relative;
+			top: 3px;
+			opacity: 0;
     	}
     }
 
@@ -68,27 +63,6 @@ $btnHovTime: 0.6s;
     }
 }  
 
-.no-touchevents .btn:hover {
-
-	i {
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-	}
-
-	&:not(.btn-2) {
-	
-		span {
-			@include transform(translateX(-15px) translateZ(0) scale(1.0, 1.0));
-			color: $yellow;
-
-			&:after {
-    			@include transform(translateX(0px));
-    			@include delay(0.1s);
-    			opacity: 1;
-			}
-		}
-	}
-}
 
 .btn-2 {
 	height: 60px;
@@ -103,6 +77,10 @@ $btnHovTime: 0.6s;
 			font-size: 9px;
 		}
 
+		img.arrow {
+			@include transform(rotate(90deg));
+    	}
+
 		b {
 			font-weight: normal;
 			color: $yellow;
@@ -111,6 +89,42 @@ $btnHovTime: 0.6s;
 
 	i  {
 		background-color: #2f397e;
+	}
+}
+
+.no-touchevents {
+
+	.btn:hover {
+
+		i {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		}
+
+		&:not(.btn-2) {
+		
+			span {
+				@include transform(translateX(-15px) translateZ(0) scale(1.0, 1.0));
+				color: $yellow;
+
+				.arrow {
+	    			@include transform(rotate(-90deg) translateY(25px));
+	    			opacity: 1;
+				}
+			}
+		}
+	}
+
+	.btn-back:hover {
+
+		span {
+			@include transform(translateX(15px) translateZ(0) scale(1.0, 1.0));
+
+			.arrow {
+    			@include transform(rotate(90deg) translateY(25px));
+    			opacity: 1;
+			}
+		}
 	}
 }
 
@@ -156,22 +170,68 @@ $btnHovTime: 0.6s;
 			}
 		}
 	}
+
+	&.btn-dl:hover {
+
+		button, a {
+			
+			img {
+				@include animation(icoDl, 1.5s, linear);
+				animation-iteration-count: 2;
+				-webkit-animation-iteration-count: 2;
+				-ms-animation-iteration-count: 2;
+			}
+		}
+	}
 }
 
 @keyframes icoTel {
 	25% {
-		@include transform(translateY(-50%) rotate(10deg));
+		transform: translateY(-50%) rotate(10deg);
+		-ms-transform: translateY(-50%) rotate(10deg);
 	}
 
 	75% {
-		@include transform(translateY(-50%) rotate(-10deg));
+		transform: translateY(-50%) rotate(-10deg);
+		-ms-transform: translateY(-50%) rotate(-10deg);
 	}	
 
 	100% {
-		@include transform(translateY(-50%) rotate(0deg));
+		transform: translateY(-50%) rotate(0deg);
+		-ms-transform: translateY(-50%) rotate(0deg);
 	}
 }
 
+@-webkit-keyframes icoTel {
+	25% {
+		-webkit-transform: translateY(-50%) rotate(10deg);
+	}
+
+	75% {
+		-webkit-transform: translateY(-50%) rotate(-10deg);
+	}	
+
+	100% {
+		-webkit-transform: translateY(-50%) rotate(0deg);
+	}
+}
+
+@keyframes icoDl {
+	25% {
+		transform: translateY(-50%) translateY(3px);
+		-ms-transform: translateY(-50%) translateY(3px);
+	}
+
+	75% {
+		transform: translateY(-50%) translateY(-3px);
+		-ms-transform: translateY(-50%) translateY(-3px);
+	}	
+
+	100% {
+		transform: translateY(-50%) translateY(0px);
+		-ms-transform: translateY(-50%) translateY(0px);
+	}
+}
 
 .btn-reg, .btn-check {
 	width: 270px;

@@ -45,17 +45,18 @@
 		</header>
 
 		<!-- Page -->
-		<div class="page home-page" style="background: url(images/video.png)">
+		<div class="page home-page">
+			<video id="video-bg" loop muted style="background: url(images/video.png)"></video>
 			<div class="socket">
 
 				<div class="logo-team">
 					<img src="images/logo-t.png" alt="">
 				</div>
 				
-				<div class="content-wrap">
+				<div class="content-wrap animate-wrap">
 					<div class="title-wrap">
 						<div class="title-1 animate-slide">
-							Команда болельщиков <span>Visa </span>
+							Команда болельщиков <span>Visa</span>
 						</div>
 						<p class="animate-slide">
 							Вступай в команду, которая точно окажется в финале Чемпионата мира по футболу FIFA™
@@ -66,7 +67,22 @@
 						<li class="animate-slide">
 							<div class="ico-wrap">
 								<div class="ico ico-1">
-									<img width="50" src="images/ico-a-1.svg" alt="">
+									<img width="50" height="44" src="images/ico-a-1.svg" alt="">
+
+									<ul class="icons">
+										<li>
+											<img width="23" src="images/ico-a-11.svg" alt="">
+										</li>
+										<li>
+											<img width="33" src="images/ico-a-12.svg" alt="">
+										</li>
+										<li>
+											<img width="27" src="images/ico-a-13.svg" alt="">
+										</li>
+										<li>
+											<img width="30" src="images/ico-a-14.svg" alt="">
+										</li>
+									</ul>
 								</div>
 							</div>
 
@@ -79,7 +95,13 @@
 						<li class="animate-slide">
 							<div class="ico-wrap">
 								<div class="ico ico-2">
-									<img width="35" src="images/ico-a-2.svg" alt="">
+									<img width="35" height="53" src="images/ico-a-2.svg" alt="">
+									
+									<div class="lines">
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
 								</div>
 							</div>
 
@@ -94,7 +116,7 @@
 						<li class="animate-slide">	
 							<div class="ico-wrap">
 								<div class="ico ico-3">
-									<img width="76" src="images/ico-a-3.svg" alt="">
+									<img width="76" height="76" src="images/ico-a-3.svg" alt="">
 								</div>
 							</div>
 
@@ -110,7 +132,10 @@
 					<div class="btn btn-reg animate-slide">
 						<button>
 							<i></i>
-							<span>Зарегистрироваться</span>
+							<span>
+								Зарегистрироваться
+								<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+							</span>
 						</button>
 					</div>
 				</div>
@@ -203,13 +228,13 @@
 				<i></i>
 			</button>
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="title-1 animate-slide">Регистрация</div>
 
 				<form action="">
 
 					<!-- Number Form -->
-					<div class="num-form">
+					<div class="num-form animate-wrap">
 						<p class="text-o animate-slide">
 							Регистрируйтесь и совершайте транзакции. <br>
 							Больше транзакций - больше шансов выиграть приз.
@@ -233,7 +258,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -243,9 +271,9 @@
 					</div><!-- / Number Form -->
 
 					<!-- Code Form -->
-					<div class="code-form">
+					<div class="code-form animate-wrap">
 						<p class="text-o animate-slide">
-							Введите код подтверждения, отправленый в <br>
+							Введите код подтверждения, отправленный в <br>
 							SMS на указанный номер телефона
 						</p>
 
@@ -256,7 +284,10 @@
 						<div class="btn btn-full animate-slide">
 							<a href="add_check.htm">
 								<i></i>
-								<span>Зарегистрироваться</span>
+								<span>
+									Зарегистрироваться
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</a>
 						</div>
 
@@ -310,9 +341,9 @@
 				<form action="">
 
 					<!-- Number Form -->
-					<div class="num-form">
+					<div class="num-form animate-wrap">
 						<p class="text-o animate-slide">
-							Регистрируйтесь и совершайте транзакции. <br>
+							Авторизируйтесь и совершайте транзакции. <br>
 							Больше транзакций - больше шансов выиграть приз.
 						</p>
 
@@ -323,7 +354,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -333,9 +367,9 @@
 					</div><!-- / Number Form -->
 
 					<!-- Code Form -->
-					<div class="code-form">
+					<div class="code-form animate-wrap">
 						<p class="text-o animate-slide">
-							Введите код подтверждения, отправленый в <br>
+							Введите код подтверждения, отправленный в <br>
 							SMS на указанный номер телефона
 						</p>
 
@@ -380,7 +414,7 @@
 
         <script src="./js/modernizr-custom.js"></script> 
 		<script>
-			window.addEventListener("load", ()=> {
+			window.addEventListener("load", function() {
 				// let menuCir = document.querySelectorAll(".menu-circle");
 				
 				// var time = 10; 
@@ -423,7 +457,7 @@
 				});
 				
 				// Registration
-				btnReg.addEventListener("click", ()=> {
+				btnReg.addEventListener("click", function() {
 					if (!mobile){
 						popupReg.classList.add("open");
 						body.classList.add("popup-open");
@@ -433,7 +467,7 @@
 				});
 
 				// Authorization
-				btnAut.addEventListener("click", ()=> {
+				btnAut.addEventListener("click", function() {
 					if (!mobile){
 						popupAut.classList.add("open");
 						body.classList.remove("menu-open");
@@ -464,9 +498,40 @@
 					});
 				});
 
+
 			});
 		</script>
-       
+
+        <script src="./js/animate.js"></script>
+
+        <!-- Video Background -->
+        <script src="./js/bideo.js"></script>
+        <script>
+        	(function () {
+
+			  var bv = new Bideo();
+			  bv.init({
+			    videoEl: document.querySelector('#video-bg'),
+			    container: document.querySelector('body'),
+			    resize: true,
+			    autoplay: true,
+			    isMobile: window.matchMedia('(max-width: 768px)').matches,
+
+			    src: [
+			      {
+			        src: 'videos/video-home.mp4',
+			        type: 'video/mp4'
+			      },
+			      {
+			        src: 'videos/video-home.webm',
+			        type: 'video/webm;codecs="vp8, vorbis"'
+			      }
+			    ],
+
+			  });
+			}());
+
+        </script>
 		<script src="http://localhost:35729/livereload.js"></script>
 
 	</body>

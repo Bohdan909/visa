@@ -48,13 +48,14 @@
 
 		<!-- Page -->
 		<div class="page home-page" style="background: url(images/video.png)">
+			<video id="video-bg" loop muted style="background: url(images/video.png)"></video>
 			<div class="socket">
 
 				<div class="logo-team">
 					<img src="images/logo-t.png" alt="">
 				</div>
 				
-				<div class="content-wrap">
+				<div class="content-wrap animate-wrap">
 					<div class="title-wrap">
 						<div class="title-1 animate-slide">
 							Команда болельщиков <span>Visa </span>
@@ -112,7 +113,10 @@
 					<div class="btn btn-check animate-slide">
 						<button>
 							<i></i>
-							<span>Добавьте чек</span>
+							<span>
+								Добавьте чек
+								<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+							</span>
 						</button>
 					</div>
 				</div>
@@ -211,7 +215,7 @@
 				<form action="">
 
 					<!-- Number Form -->
-					<div class="num-form">
+					<div class="num-form animate-wrap">
 						<p class="text-o animate-slide">
 							Регистрируйтесь и совершайте транзакции. <br>
 							Больше транзакций - больше шансов выиграть приз.
@@ -235,7 +239,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -245,7 +252,7 @@
 					</div><!-- / Number Form -->
 
 					<!-- Code Form -->
-					<div class="code-form">
+					<div class="code-form animate-wrap">
 						<p class="text-o animate-slide">
 							Введите код подтверждения, отправленый в <br>
 							SMS на указанный номер телефона
@@ -258,11 +265,14 @@
 						<div class="btn btn-full animate-slide">
 							<button type="submit">
 								<i></i>
-								<span>Зарегистрироваться</span>
+								<span>
+									Зарегистрироваться
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
-						<div class="code-btns-row">
+						<div class="btns-row">
 							<div class="btn btn-2 btn-ico btn-ref animate-slide">
 								<button>
 									<i></i>
@@ -306,7 +316,7 @@
 				<i></i>
 			</button>
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="title-1 animate-slide">Авторизация</div>
 
 				<form action="">
@@ -325,7 +335,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -348,11 +361,14 @@
 						<div class="btn btn-full animate-slide">
 							<button type="submit">
 								<i></i>
-								<span>войти</span>
+								<span>
+									войти
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
-						<div class="code-btns-row">
+						<div class="btns-row">
 							<div class="btn btn-2 btn-ico btn-ref animate-slide">
 								<button>
 									<i></i>
@@ -399,10 +415,10 @@
 					<div class="title-1 animate-slide">Добавьте чек</div>
 					
 					<!-- Pane/Menu -->
-					<div class="check-pane check-pane-menu">
+					<div class="check-pane check-pane-menu animate-wrap">
 						<p class="animate-slide">
 							Для участия в акции осталось загрузить не менее 3 чеков. <br>
-							Обратите внимание, что за покупки у <a href="">наших партнеров</a> вы получаете двойные шансы
+							Обратите внимание, что за покупки у <a href="partners.htm">наших партнеров</a> вы получаете двойные шансы
 						</p>
 
 						<ul class="add-check-menu">
@@ -440,7 +456,7 @@
 					</div>
 					
 					<!-- Pane -->
-					<div class="check-pane check-pane-photo">
+					<div class="check-pane check-pane-photo animate-wrap">
 						<p class="animate-slide">
 							Для регистрации чека поместите его в квадрат
 						</p>
@@ -460,7 +476,7 @@
 					</div>
 
 					<!-- Pane -->
-					<div class="check-pane check-pane-enter">
+					<div class="check-pane check-pane-enter animate-wrap">
 						<p class="animate-slide">
 							Для регистрации чека заполните поля ниже
 						</p>
@@ -500,8 +516,8 @@
 								<div class="btn btn-2 btn-back animate-slide">
 									<button>
 										<i></i>
-										
 										<span>
+											<img class="arrow" width="13" src="images/arrow-btn-back.svg" alt="">
 											назад
 										</span>
 									</button>
@@ -513,6 +529,7 @@
 										
 										<span>
 											готово
+											<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
 										</span>
 									</button>
 								</div>
@@ -617,7 +634,36 @@
 				});
 			});
 		</script>
-       
+		
+        <script src="./js/animate.js"></script>
+
+        <!-- Video Background -->
+        <script src="./js/bideo.js"></script>
+        <script>
+        	(function () {
+
+			  var bv = new Bideo();
+			  bv.init({
+			    videoEl: document.querySelector('#video-bg'),
+			    container: document.querySelector('body'),
+			    resize: true,
+			    autoplay: true,
+			    isMobile: window.matchMedia('(max-width: 768px)').matches,
+
+			    src: [
+			      {
+			        src: 'videos/video-home.mp4',
+			        type: 'video/mp4'
+			      },
+			      {
+			        src: 'videos/video-home.webm',
+			        type: 'video/webm;codecs="vp8, vorbis"'
+			      }
+			    ],
+
+			  });
+			}());
+        </script>
 		<script src="http://localhost:35729/livereload.js"></script>
 
 

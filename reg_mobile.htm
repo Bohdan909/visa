@@ -93,7 +93,7 @@
 		<!-- Registration -->
 		<div class="popup popup-reg">
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="title-1 animate-slide">Регистрация</div>
 
 				<form action="">
@@ -209,21 +209,12 @@
 					document.querySelector(".num-form").setAttribute("style", "display: none");
 				});
 
-				// Animate
-				let animateWrap = document.querySelectorAll(".animate-wrap");
-
-				animateWrap.forEach(function(wrapItem){
-					let animateList = wrapItem.querySelectorAll(".animate-slide");
-					
-					for (let i = 0; i < animateList.length; i++){
-						animateList[i].setAttribute("style", "'animation-delay:" + (0.1 * i) + "s'")
-					}
-				});
-
+			
 
 			});
 		</script>
-       
+
+        <script src="./js/animate.js"></script>
 		<script src="http://localhost:35729/livereload.js"></script>
 	</body>
 </html>

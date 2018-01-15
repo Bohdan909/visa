@@ -3,9 +3,34 @@
     Home
     ------------------- */   
 
-.home-page {
+#video-bg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
 	background-size: cover !important;
 
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	object-fit: cover;
+}
+
+.home-page {
+
+	&:after {
+		@include full;
+		content: "";
+		display: block;
+		background-color: rgba(0,0,0, 0.5);
+		z-index: 1;
+	}
+
+	.socket {
+		z-index: 2;
+	}
+	
 	.title-1 {
 		font-size: 70px;
 		line-height: 95px;
@@ -64,7 +89,7 @@
 	padding-top: 60px;
 	padding-bottom: 60px;
 
-	li {
+	> li {
 		width: 245px;
 		margin: 0 33px;
 		
@@ -77,10 +102,134 @@
 			margin-bottom: 18px;
 
 			.ico {
+				position: relative;	
 				align-self: flex-end;
 				-webkit-align-self: flex-end;
+
+				.icons {
+					position: absolute;
+					left: 0;
+					top: 0;
+
+					li {
+						@include transition(all, 0.8s, ease-in-out);
+						position: absolute;
+						opacity: 0;
+
+						img {
+							@extend .not-blurry;
+						}
+
+						&:nth-child(1) {
+							top: 18px;
+							left: -68px;
+
+							@include transform(translateX(68px));
+						}
+
+						&:nth-child(2) {
+							top: -50px;
+							left: -32px;
+
+							@include transform(translateX(32px) translateY(40px));
+						}
+
+						&:nth-child(3) {
+							top: -52px;
+							right: -83px;
+
+							@include transform(translateX(-32px) translateY(42px));
+						}
+
+						&:nth-child(4) {
+							top: 19px;
+							right: -120px;
+
+							@include transform(translateX(-65px));
+						}
+					}
+				}
+
+				.lines {
+					position: absolute;
+					width: 21px;
+					height: 10px;
+					left: 7px;
+					top: 7px;
+					overflow: hidden;
+					-webkit-backface-visibility: hidden;
+    				-moz-backface-visibility: hidden;
+										
+					i {
+						position: absolute;
+						display: block;
+						width: 11px;
+						height: 1px;
+						left: 0;
+						top: 0;
+						background-color: #87878a;
+						background-color: #fff;
+					}
+
+					i:nth-child(2) {
+						width: 15px;
+						height: 2px;
+						top: 4px;
+					}
+
+					i:nth-child(3) {
+						width: 21px;
+						top: 8px;
+					}
+				}
 			}
 		}
+	}
+}
+
+.no-touchevents {
+
+	.adv-list {
+
+		> li:nth-child(1):hover {
+
+			.icons li {
+				@include transform(translate(0));
+				opacity: 0.3;
+			}
+		}
+
+		> li:nth-child(2):hover {
+			
+			.lines i {
+				@include animation(linesMove, 1.2s, linear);
+				animation-iteration-count: 2;
+				-webkit-animation-iteration-count: 2;
+				-ms-animation-iteration-count: 2;
+			}
+		}
+	}
+}
+
+@keyframes linesMove {
+	45% {
+		left: 100%;
+		opacity: 1;
+	}
+
+	50% {
+		left: 100%;
+		opacity: 0;
+	}
+
+	55% {
+		left: -100%;
+		opacity: 0;
+	}
+
+	100% {
+		left: 0;
+		opacity: 1;
 	}
 }
 

@@ -47,7 +47,7 @@
 
 		<!-- Page -->
 		<div class="text-page">
-			<div class="socket content">
+			<div class="socket content animate-wrap">
 				
 				<div class="title-1 title-left animate-slide">Личный кабинет</div>
 
@@ -96,7 +96,10 @@
 						<div class="btn btn-check animate-slide animate-slide">
 							<button>
 								<i></i>
-								<span>добавить чек</span>
+								<span>
+									добавить чек
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 					</div>
@@ -283,7 +286,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -306,7 +312,10 @@
 						<div class="btn btn-full animate-slide">
 							<a href="add_check.htm">
 								<i></i>
-								<span>Зарегистрироваться</span>
+								<span>
+									Зарегистрироваться
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</a>
 						</div>
 
@@ -366,7 +375,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -389,7 +401,10 @@
 						<div class="btn btn-full animate-slide">
 							<a href="add_check.htm">
 								<i></i>
-								<span>войти</span>
+								<span>
+									войти
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</a>
 						</div>
 
@@ -424,23 +439,30 @@
 		<!-- Add Check -->
 		<div class="popup popup-check">
 			<button class="btn-close">
-				<span></span>
+				<span>
+					<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+					     <g>
+					     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+					      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+					     </g>
+					</svg>
+				</span>
 				<i></i>
 			</button>
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="socket">
 					<div class="title-1 animate-slide">Добавьте чек</div>
 					
 					<!-- Pane/Menu -->
-					<div class="check-pane check-pane-menu">
+					<div class="check-pane check-pane-menu animate-wrap">
 						<p class="animate-slide">
 							Для участия в акции осталось загрузить не менее 3 чеков. <br>
 							Обратите внимание, что за покупки у <a href="">наших партнеров</a> вы получаете двойные шансы
 						</p>
 
 						<ul class="add-check-menu">
-							<li class="block btn-check-photo animate-slide">
+							<li class="btn-check-photo animate-slide">
 								<div class="ico">
 									<img width="65" src="images/ico-ch-1.svg" alt="">
 								</div>
@@ -448,7 +470,7 @@
 									сделать фото <br> чека с qr-кодом
 								</span>
 							</li>
-							<li class="block btn-check-upload animate-slide">
+							<li class="btn-check-upload animate-slide">
 								<div class="ico">
 									<img width="65" src="images/ico-ch-2.svg" alt="">
 								</div>
@@ -458,7 +480,7 @@
 
 								<input class="file-upload" type="file">
 							</li>
-							<li class="block btn-check-enter animate-slide">
+							<li class="btn-check-enter animate-slide">
 								<div class="ico">
 									<img width="54" src="images/ico-ch-3.svg" alt="">
 								</div>
@@ -474,7 +496,7 @@
 					</div>
 					
 					<!-- Pane -->
-					<div class="check-pane check-pane-photo">
+					<div class="check-pane check-pane-photo animate-wrap">
 						<p class="animate-slide">
 							Для регистрации чека поместите его в квадрат
 						</p>
@@ -494,7 +516,7 @@
 					</div>
 
 					<!-- Pane -->
-					<div class="check-pane check-pane-enter">
+					<div class="check-pane check-pane-enter animate-wrap">
 						<p class="animate-slide">
 							Для регистрации чека заполните поля ниже
 						</p>
@@ -536,6 +558,7 @@
 										<i></i>
 										
 										<span>
+											<img class="arrow" width="13" src="images/arrow-btn-back.svg" alt="">
 											назад
 										</span>
 									</button>
@@ -547,6 +570,7 @@
 										
 										<span>
 											готово
+											<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
 										</span>
 									</button>
 								</div>
@@ -639,7 +663,8 @@
 
 			});
 		</script>
-       
+
+        <script src="./js/animate.js"></script>
 		<script src="http://localhost:35729/livereload.js"></script>
 
 	</body>

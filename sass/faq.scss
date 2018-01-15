@@ -9,12 +9,17 @@
 
 .faq-item {
 	@include border-rad(8px);
+	@include transition(all, 0.5s, linear);
 	margin-bottom: 20px;	
 	border: 2px solid rgba(255,255,255, 0.1);
+
+	&:hover {
+		border-color: #fff;
+	}
 	
 	.faq-head {
 		position: relative;
-		padding: 20px 20px 20px 80px;
+		padding: 20px 20px 22px 80px;
 		font-size: 22px;
 		line-height: 33px;
 		font-family: $fontSbold;

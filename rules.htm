@@ -49,12 +49,12 @@
 
 		<!-- Page -->
 		<div class="text-page">
-			<div class="socket content">
+			<div class="socket content animate-wrap">
 				<div class="title-row">
 					<div class="title-1 animate-slide">Правила</div>
 
 					<div class="btns-right">
-						<div class="btn btn-2 btn-ico animate-slide">
+						<div class="btn btn-2 btn-ico btn-dl animate-slide">
 							<button>
 								<i></i>
 								
@@ -65,7 +65,7 @@
 							</button>
 						</div>
 
-						<div class="btn btn-2 btn-ico animate-slide">
+						<div class="btn btn-2 btn-ico btn-dl animate-slide">
 							<button>
 								<i></i>
 								
@@ -116,7 +116,7 @@
 						Участвовать в акции могут владельцы карт Visa, выпущенных банком ВТБ24
 					</li>
 					<li>
-						Баллы начисляются за транзакции на сумму не меньше Снятие наличных, денежный перевод и пополнение мобильного счета – это не призовые транзакции. Полный список не призовых операций доступен в приложении.
+						Баллы начисляются за транзакции на сумму не меньше. <br> Снятие наличных, денежный перевод и пополнение мобильного счета – это не призовые транзакции. Полный список не призовых операций доступен в приложении.
 					</li>
 					<li>
 						Участие в акции могут принимать совершеннолетние граждане Российской Федерации. Под открытым местом на Арене Мечты не может быть больше одного приза.
@@ -175,11 +175,18 @@
 		<!-- Registration -->
 		<div class="popup popup-reg">
 			<button class="btn-close">
-				<span></span>
+				<span>
+					<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+					     <g>
+					     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+					      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+					     </g>
+					</svg>
+				</span>
 				<i></i>
 			</button>
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="title-1 animate-slide">Регистрация</div>
 
 				<form action="">
@@ -209,7 +216,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -232,7 +242,10 @@
 						<div class="btn btn-full animate-slide">
 							<a href="add_check.htm">
 								<i></i>
-								<span>Зарегистрироваться</span>
+								<span>
+									Зарегистрироваться
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</a>
 						</div>
 
@@ -269,11 +282,18 @@
 		<!-- Authorization -->
 		<div class="popup popup-aut">
 			<button class="btn-close">
-				<span></span>
+				<span>
+					<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+					     <g>
+					     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+					      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+					     </g>
+					</svg>
+				</span>
 				<i></i>
 			</button>
 
-			<div class="popup-content-wrap">
+			<div class="popup-content-wrap animate-wrap">
 				<div class="title-1 animate-slide">Авторизация</div>
 
 				<form action="">
@@ -292,7 +312,10 @@
 						<div class="btn btn-full btn-code animate-slide">
 							<button>
 								<i></i>
-								<span>Далее</span>
+								<span>
+									Далее
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</button>
 						</div>
 
@@ -315,7 +338,10 @@
 						<div class="btn btn-full animate-slide">
 							<a href="add_check.htm">
 								<i></i>
-								<span>войти</span>
+								<span>
+									войти
+									<img class="arrow" width="13" src="images/arrow-btn.svg" alt="">
+								</span>
 							</a>
 						</div>
 
@@ -357,13 +383,11 @@
 		        
 				let mobile = window.innerWidth < 767;
 				let btnMenu = document.querySelector(".btn-menu-block");
-				let btnReg = document.querySelector(".btn-reg");
 				let btnAut = document.querySelector(".btn-aut");
 				let btnCode = document.querySelectorAll(".btn-code");
 				let btnClose = document.querySelectorAll(".btn-close");
 
 				let body = document.querySelector("body");
-				let popupReg = document.querySelector(".popup-reg");
 				let popupAut = document.querySelector(".popup-aut");
 
 				btnMenu.addEventListener("click", function() {
@@ -371,15 +395,7 @@
 					this.classList.toggle("active");
 				});
 				
-				// Registration
-				btnReg.addEventListener("click", ()=> {
-					if (!mobile){
-						popupReg.classList.add("open");
-						body.classList.add("popup-open");
-					} else {
-						window.open("reg_mobile.htm");
-					}
-				});
+			
 
 				// Authorization
 				btnAut.addEventListener("click", ()=> {
@@ -415,7 +431,8 @@
 
 			});
 		</script>
-       
+
+        <script src="./js/animate.js"></script>
 		<script src="http://localhost:35729/livereload.js"></script>
 
 	</body>
