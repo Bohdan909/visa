@@ -419,3 +419,12 @@ $mid-width    : 1280px;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
     -webkit-font-smoothing: subpixel-antialiased;
 }
+
+.sm {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    perspective: 1000;
+}

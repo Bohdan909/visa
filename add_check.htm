@@ -69,7 +69,22 @@
 						<li class="animate-slide">
 							<div class="ico-wrap">
 								<div class="ico ico-1">
-									<img src="images/ico-a-1.png" alt="">
+									<img width="50" height="44" src="images/ico-a-1.svg" alt="">
+
+									<ul class="icons">
+										<li>
+											<img width="23" height="29" src="images/ico-a-11.svg" alt="">
+										</li>
+										<li>
+											<img width="33" height="29" src="images/ico-a-12.svg" alt="">
+										</li>
+										<li>
+											<img width="27" height="32" src="images/ico-a-13.svg" alt="">
+										</li>
+										<li>
+											<img width="30" height="28" src="images/ico-a-14.svg" alt="">
+										</li>
+									</ul>
 								</div>
 							</div>
 
@@ -82,7 +97,13 @@
 						<li class="animate-slide">
 							<div class="ico-wrap">
 								<div class="ico ico-2">
-									<img src="images/ico-a-2.png" alt="">
+									<img width="35" height="53" src="images/ico-a-2.svg" alt="">
+									
+									<div class="lines">
+										<i></i>
+										<i></i>
+										<i></i>
+									</div>
 								</div>
 							</div>
 
@@ -97,7 +118,20 @@
 						<li class="animate-slide">	
 							<div class="ico-wrap">
 								<div class="ico ico-3">
-									<img src="images/ico-a-3.png" alt="">
+									<img width="76" height="76" src="images/ico-a-3.svg" alt="">
+
+									<ul class="conf">
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
 								</div>
 							</div>
 
@@ -550,7 +584,7 @@
 		            document.querySelector("body").classList.add("loaded");
 		        }, 500);
 		        
-				let mobile = window.innerWidth < 767;
+				let mobile = window.innerWidth < 768;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnAut = document.querySelector(".btn-aut");
 				let btnCode = document.querySelectorAll(".btn-code");
@@ -562,6 +596,10 @@
 				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
 					this.classList.toggle("active");
+
+					if (mobile){
+						window.scrollTo(0, 0);
+					}
 				});
 				
 				// Authorization

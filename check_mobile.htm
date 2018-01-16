@@ -93,7 +93,14 @@
 		<!-- Add Check -->
 		<div class="popup popup-check">
 			<button class="btn-close">
-				<span></span>
+				<span>
+					<svg width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+					    <g>
+					     	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="rgba(255,255,255,0.2)" fill="none"  />
+					      	<circle r="31" cy="33" cx="35" stroke-width="2" stroke="#fff" fill="none" class="menu-circle" />
+					    </g>
+					</svg>
+				</span>
 				<i></i>
 			</button>
 
@@ -230,11 +237,13 @@
 
         <script src="./js/modernizr-custom.js"></script> 
 		<script>
-			window.addEventListener("load", ()=> {
+			window.addEventListener("load", function(){
+				
 				setTimeout(function(){
 		            document.querySelector("body").classList.add("loaded");
 		        }, 500);
-		        
+
+		        let mobile = window.innerWidth < 768;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnCode = document.querySelectorAll(".btn-code");
@@ -244,13 +253,15 @@
 				let popupOpen = document.querySelector(".popup.open");
 				let popupReg = document.querySelector(".popup-reg");
 
-
 				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
 					this.classList.toggle("active");
+
+					if (mobile){
+						window.scrollTo(0, 0);
+					}
 				});
 				
-
 				// Add Check
 				let btnAddPhoto = document.querySelector(".btn-check-photo");
 				let checkPanes = document.querySelectorAll(".check-pane");

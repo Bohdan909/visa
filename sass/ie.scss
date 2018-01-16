@@ -1,0 +1,25 @@
+
+/* --------------------
+    IE
+    ------------------- */   
+
+@include ie10 {
+
+	.footer {
+
+		.social li {
+
+			&:nth-child(1) img {
+				height: 13px;
+			}
+
+			&:nth-child(2) img {
+				height: 18px;
+			}
+
+			&:nth-child(3) img {
+				height: 22px;
+			}
+		}
+	}
+}

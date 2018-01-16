@@ -500,7 +500,7 @@
 		            document.querySelector("body").classList.add("loaded");
 		        }, 500);
 		        
-				let mobile = window.innerWidth < 767;
+				let mobile = window.innerWidth < 768;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnAut = document.querySelector(".btn-aut");
 				let btnCode = document.querySelectorAll(".btn-code");
@@ -512,6 +512,10 @@
 				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
 					this.classList.toggle("active");
+
+					if (mobile){
+						window.scrollTo(0, 0);
+					}
 				});
 				
 

@@ -20,7 +20,7 @@
   left: 50%;
   top: 50%; }
 
-.ps, .btn-menu > span:after, .btn-close > span:after, .btn-menu i:nth-child(2):before, .btn-menu i:nth-child(2):after, .menu li a:before, .figure:after, .popup:after, .btn-close i:before, .btn-close i:after, .info-link:before, .info-link:after, .add-check-menu li:after, .check-photo-block .check-btn .ico:after, .select:after, .checkbox .custom-checkbox:after, .text-list li:before, .cabinet-block .cabinet-left:after, .cabinet-check-item section div:after {
+.ps, .btn-menu > span:after, .btn-close > span:after, .btn-menu i:nth-child(2):before, .btn-menu i:nth-child(2):after, .menu li a:before, .figure:after, .popup:after, .btn-close i:before, .btn-close i:after, .info-link:before, .info-link:after, .add-check-menu li:after, .check-photo-block .check-btn .ico:after, .select:after, .checkbox .custom-checkbox:after, .adv-list > li .ico-wrap .ico .conf li:after, .text-list li:before, .cabinet-block .cabinet-left:after, .cabinet-check-item section div:after {
   content: "";
   display: block;
   position: absolute;
@@ -49,6 +49,14 @@
 .not-blurry, .menu li a, .check-photo-block .check-btn span, .btn span, .adv-list > li .ico-wrap .ico .icons li img {
   -webkit-transform: translateZ(0) scale(1, 1);
   -webkit-font-smoothing: subpixel-antialiased; }
+
+.sm, .adv-list > li .ico-wrap .ico .conf li {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  perspective: 1000; }
 
 /* =========================
    Fonts
@@ -121,6 +129,13 @@ p {
     font-size: 30px !important;
     line-height: 45px !important;
     margin-bottom: 15px; } }
+
+@media (max-width: 374px) {
+  body {
+    letter-spacing: 0; }
+  .title-1 {
+    line-height: 35px !important;
+    margin-bottom: 7px; } }
 
 @font-face {
   font-family: "MyriadPro-Regular";
@@ -458,7 +473,10 @@ body {
   .menu-block .socket {
     padding-top: 108px; }
     .menu-block .socket.figure:after {
-      opacity: 0; }
+      opacity: 0;
+      width: 810px;
+      height: 594px;
+      background: url(../images/figure-menu.png) no-repeat; }
   @media (min-width: 768px) and (max-height: 600px) {
     .menu-block {
       height: 600px; } }
@@ -470,7 +488,7 @@ body {
   @media (min-width: 768px) and (max-height: 600px) {
     .menu {
       padding: 25px 0; } }
-  @media (min-width: 1025px) and (min-height: 950px) {
+  @media (min-width: 800px) and (min-height: 950px) {
     .menu {
       height: 60%;
       padding: 0; } }
@@ -967,6 +985,10 @@ a.info-link:hover span {
   -webkit-transform-origin: center center; }
 
 @media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden; }
+  .menu-block {
+    position: fixed; }
   .check-photo-block {
     width: 260px;
     display: block;
@@ -1451,9 +1473,13 @@ a.info-link:hover span {
     width: 92px; }
 
 .logo {
+  width: 180px;
+  height: 69px;
   right: 0;
   top: 43px;
   z-index: 999; }
+  .logo img {
+    width: 100%; }
 
 .adv-list {
   display: flex;
@@ -1536,6 +1562,150 @@ a.info-link:hover span {
           .adv-list > li .ico-wrap .ico .lines i:nth-child(3) {
             width: 21px;
             top: 8px; }
+        .adv-list > li .ico-wrap .ico .conf {
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .adv-list > li .ico-wrap .ico .conf li {
+            position: absolute;
+            width: 3px;
+            height: 3px; }
+            .adv-list > li .ico-wrap .ico .conf li:after {
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: #f7b600; }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(1) {
+            left: 1px;
+            top: 3px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(1):after {
+              -webkit-transform: rotate(35deg);
+              -ms-transform: rotate(35deg);
+              transform: rotate(35deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(2) {
+            animation-delay: 0.2s !important;
+            -webkit-animation-delay: 0.2s !important;
+            width: 6px;
+            height: 10px;
+            top: 1px;
+            left: 15px;
+            animation-duration: 1.7s;
+            -webkit-animation-duration: 1.7s;
+            -ms-animation-duration: 1.7s; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(2):after {
+              -webkit-transform: rotate(106deg);
+              -ms-transform: rotate(106deg);
+              transform: rotate(106deg);
+              background: url(../images/conf-1.svg) no-repeat;
+              background-size: 100% auto; }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(3) {
+            animation-delay: 0.3s !important;
+            -webkit-animation-delay: 0.3s !important;
+            width: 3px;
+            height: 3px;
+            left: 8px;
+            top: 10px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(3):after {
+              -webkit-transform: rotate(50deg);
+              -ms-transform: rotate(50deg);
+              transform: rotate(50deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(4) {
+            width: 2px;
+            height: 2px;
+            left: 18px;
+            top: 15px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(4):after {
+              -webkit-transform: rotate(50deg);
+              -ms-transform: rotate(50deg);
+              transform: rotate(50deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(5) {
+            animation-delay: 0.35s !important;
+            -webkit-animation-delay: 0.35s !important;
+            animation-duration: 1.5s;
+            -webkit-animation-duration: 1.5s;
+            -ms-animation-duration: 1.5s;
+            left: 0;
+            top: 20px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(5):after {
+              -webkit-transform: rotate(63deg);
+              -ms-transform: rotate(63deg);
+              transform: rotate(63deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(6) {
+            animation-delay: 0.4s !important;
+            -webkit-animation-delay: 0.4s !important;
+            animation-duration: 2.5s;
+            -webkit-animation-duration: 2.5s;
+            -ms-animation-duration: 2.5s;
+            width: 2px;
+            height: 2px;
+            left: 53px;
+            top: 0; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(6):after {
+              -webkit-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              transform: rotate(0deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(7) {
+            left: 54px;
+            top: 11px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(7):after {
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(8) {
+            animation-delay: 0.5s !important;
+            -webkit-animation-delay: 0.5s !important;
+            width: 3px;
+            height: 3px;
+            left: 64px;
+            top: 7px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(8):after {
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg); }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(9) {
+            animation-delay: 0.55s !important;
+            -webkit-animation-delay: 0.55s !important;
+            left: 72px;
+            top: 12px;
+            width: 6px;
+            height: 10px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(9):after {
+              -webkit-transform: rotate(-114deg);
+              -ms-transform: rotate(-114deg);
+              transform: rotate(-114deg);
+              background: url(../images/conf-2.svg) no-repeat;
+              background-size: 100% auto; }
+          .adv-list > li .ico-wrap .ico .conf li:nth-child(10) {
+            animation-delay: 0.6s !important;
+            -webkit-animation-delay: 0.6s !important;
+            animation-duration: 2.0s;
+            -webkit-animation-duration: 2.0s;
+            -ms-animation-duration: 2.0s;
+            width: 2px;
+            height: 2px;
+            left: 64px;
+            top: 16px; }
+            .adv-list > li .ico-wrap .ico .conf li:nth-child(10):after {
+              -webkit-transform: rotate(-40deg);
+              -ms-transform: rotate(-40deg);
+              transform: rotate(-40deg); }
+
+@keyframes conf {
+  25% {
+    transform: translateY(-3px); }
+  75% {
+    transform: translateY(calc(3px + 2px)); }
+  100% {
+    transform: translateY(0px); } }
+
+@-webkit-keyframes conf {
+  25% {
+    -webkit-transform: translateY(-3px); }
+  75% {
+    -webkit-transform: translateY(calc(3px + 2px)); }
+  100% {
+    -webkit-transform: translateY(0px); } }
 
 .no-touchevents .adv-list > li:nth-child(1):hover .icons li {
   -webkit-transform: translate(0);
@@ -1550,6 +1720,14 @@ a.info-link:hover span {
   animation-iteration-count: 2;
   -webkit-animation-iteration-count: 2;
   -ms-animation-iteration-count: 2; }
+
+.no-touchevents .adv-list > li:nth-child(3):hover .conf li {
+  animation: conf 1.9s ease-in-out forwards;
+  -ms-animation: conf 1.9s ease-in-out forwards;
+  -webkit-animation: conf 1.9s ease-in-out forwards;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1; }
 
 @keyframes linesMove {
   45% {
@@ -1633,9 +1811,9 @@ a.info-link:hover span {
   .adv-list {
     padding: 25px 0 35px;
     margin: 0 -25px; }
-    .adv-list li {
+    .adv-list > li {
       margin: 0 10px; }
-      .adv-list li p {
+      .adv-list > li p {
         font-size: 13px; } }
 
 @media (min-width: 768px) and (max-height: 600px) {
@@ -1695,6 +1873,12 @@ a.info-link:hover span {
   .menu-block .socket {
     padding-top: 85px; }
   .menu {
+    padding: 15px 0; }
+    .menu li a {
+      font-size: 20px; } }
+
+@media (max-width: 767px) and (orientation: landscape) and (max-height: 240px) {
+  .menu {
     padding: 10px 0; }
     .menu li a {
       font-size: 15px; } }
@@ -1726,21 +1910,21 @@ a.info-link:hover span {
       border-radius: 0; }
   .adv-list {
     display: block; }
-    .adv-list li {
+    .adv-list > li {
       position: relative;
       width: 85%;
       margin: 0;
       margin-bottom: 40px;
       padding-left: 100px;
       text-align: left; }
-      .adv-list li:last-child {
+      .adv-list > li:last-child {
         margin-bottom: 0; }
-      .adv-list li .ico-wrap {
+      .adv-list > li .ico-wrap {
         position: absolute;
         width: 100px;
         left: 0;
         top: 0; }
-        .adv-list li .ico-wrap .ico {
+        .adv-list > li .ico-wrap .ico {
           align-self: start;
           -webkit-align-self: start; }
   .footer {
@@ -1769,6 +1953,12 @@ a.info-link:hover span {
             transform: translateY(-50%);
             position: relative;
             top: 50%; } }
+
+@media (max-width: 374px) {
+  .home-page .socket {
+    padding-top: 235px; }
+  .logo-team {
+    top: 125px; } }
 
 /* --------------------
     Rules
@@ -1920,6 +2110,7 @@ a.info-link:hover span {
       line-height: 38px; }
   .chance-block .chance-text {
     width: 55%;
+    position: relative;
     text-align: left; }
     .chance-block .chance-text .title-1 {
       font-size: 45px;
@@ -1965,6 +2156,11 @@ a.info-link:hover span {
   .chance-block .chance-image .chance-image-inner img {
     width: 80%;
     height: auto; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .chance-image-inner, .chance-text-inner {
+    position: absolute !important;
+    top: 48% !important; } }
 
 @media (max-width: 767px) {
   .chance-block {
@@ -2012,8 +2208,6 @@ a.info-link:hover span {
   transition: all 0.5s linear;
   margin-bottom: 20px;
   border: 2px solid rgba(255, 255, 255, 0.1); }
-  .faq-item:hover {
-    border-color: #fff; }
   .faq-item .faq-head {
     position: relative;
     padding: 20px 20px 22px 80px;
@@ -2073,6 +2267,9 @@ a.info-link:hover span {
     -ms-transition-delay: 0s !important;
     transition-delay: 0s !important;
     opacity: 1; }
+
+.no-touchevents .faq-item:hover {
+  border-color: #fff; }
 
 @media (max-width: 767px) {
   .faq-item .faq-head {
@@ -2376,3 +2573,14 @@ a.info-link:hover span {
     padding-top: 27px; }
   .text-block .title-1 {
     margin-bottom: 15px; } }
+
+/* --------------------
+    IE
+    ------------------- */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .footer .social li:nth-child(1) img {
+    height: 13px; }
+  .footer .social li:nth-child(2) img {
+    height: 18px; }
+  .footer .social li:nth-child(3) img {
+    height: 22px; } }

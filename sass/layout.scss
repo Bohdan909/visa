@@ -370,6 +370,9 @@ $menuHtime: 0.4s;
             
             &:after {
                 opacity: 0;
+                width: 810px;
+                height: 594px;
+                background: url(../images/figure-menu.png) no-repeat;
             }
         }
     }
@@ -392,7 +395,7 @@ $menuLiColor: #474c80;
         padding: 25px 0;
     }
 
-    @media (min-width: 1025px) and (min-height: 950px){
+    @media (min-width: 800px) and (min-height: 950px){
         height: 60%;
         padding: 0;
     }
@@ -1005,6 +1008,14 @@ a.info-link {
 }
 
 @include mobile {
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    .menu-block {
+        position: fixed;
+    }
 
     .check-photo-block {
         width: 260px;

@@ -12,10 +12,6 @@
 	@include transition(all, 0.5s, linear);
 	margin-bottom: 20px;	
 	border: 2px solid rgba(255,255,255, 0.1);
-
-	&:hover {
-		border-color: #fff;
-	}
 	
 	.faq-head {
 		position: relative;
@@ -93,6 +89,10 @@
 			opacity: 1;
 		}
 	}
+}
+
+.no-touchevents .faq-item:hover {
+	border-color: #fff;
 }
 
 @include mobile {

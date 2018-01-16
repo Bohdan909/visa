@@ -78,9 +78,15 @@
 }
 
 .logo {
-   right: 0;
-   top: 43px;
-   z-index: 999;
+	width: 180px;
+	height: 69px;
+    right: 0;
+    top: 43px;
+    z-index: 999;
+
+    img {
+   		width: 100%;
+   	}
 }
 
 
@@ -182,8 +188,191 @@
 						top: 8px;
 					}
 				}
+
+				.conf {
+					position: absolute;
+					top: 0;
+					left: 0;
+
+					li {
+						@extend .sm;
+						position: absolute;
+						width: 3px;
+						height: 3px;
+
+						&:after {
+							@extend .ps;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							background: $yellow;
+						}
+					}
+
+					li:nth-child(1) {
+						left: 1px;
+						top: 3px;
+
+						&:after {
+							@include transform(rotate(35deg));
+						}
+					}
+
+					li:nth-child(2) {
+						@include a-delay(0.2s);						
+						width: 6px;
+						height: 10px;
+						top: 1px;
+						left: 15px;
+
+						animation-duration: 1.7s;
+						-webkit-animation-duration: 1.7s;
+						-ms-animation-duration: 1.7s;
+						
+						&:after {
+							@include transform(rotate(106deg));
+							background: url(../images/conf-1.svg) no-repeat;
+							background-size: 100% auto;
+						}
+					}
+
+					li:nth-child(3) {
+						@include a-delay(0.30s);
+						width: 3px;
+						height: 3px;
+						left: 8px;
+						top: 10px;
+
+						&:after {
+							@include transform(rotate(50deg));
+						}
+					}
+
+					li:nth-child(4) {
+						width: 2px;
+						height: 2px;
+						left: 18px;
+						top: 15px;
+
+						&:after {
+							@include transform(rotate(50deg));
+						}
+					}
+
+					li:nth-child(5) {
+						@include a-delay(0.35s);
+						animation-duration: 1.5s;
+						-webkit-animation-duration: 1.5s;
+						-ms-animation-duration: 1.5s;
+
+						left: 0;
+						top: 20px;
+
+						&:after {
+							@include transform(rotate(63deg));
+						}
+					}
+
+					li:nth-child(6) {
+						@include a-delay(0.4s);
+						animation-duration: 2.5s;
+						-webkit-animation-duration: 2.5s;
+						-ms-animation-duration: 2.5s;
+
+						width: 2px;
+						height: 2px;
+						left: 53px;
+						top: 0;
+
+						&:after {
+							@include transform(rotate(0deg));						
+						}
+					}
+
+					li:nth-child(7) {
+						left: 54px;
+						top: 11px;
+
+						&:after {
+							@include transform(rotate(45deg));							
+						}
+					}
+
+					li:nth-child(8) {
+						@include a-delay(0.5s);
+						width: 3px;
+						height: 3px;
+						left: 64px;
+						top: 7px;
+
+						&:after {
+							@include transform(rotate(45deg));
+						}
+					}
+
+					li:nth-child(9) {
+						@include a-delay(0.55s);
+						left: 72px;
+						top: 12px;
+						width: 6px;
+						height: 10px;
+						
+						&:after {						
+							@include transform(rotate(-114deg));
+							background: url(../images/conf-2.svg) no-repeat;
+							background-size: 100% auto;
+						}
+					}
+
+					li:nth-child(10) {
+						@include a-delay(0.6s);
+						animation-duration: 2.0s;
+						-webkit-animation-duration: 2.0s;
+						-ms-animation-duration: 2.0s;
+
+						width: 2px;
+						height: 2px;
+						left: 64px;
+						top: 16px;
+
+						&:after {
+							@include transform(rotate(-40deg));
+						}
+					}
+				}
 			}
 		}
+	}
+}
+
+$animateAmp: 3px;
+
+@keyframes conf {
+	25% {
+		transform: translateY(-$animateAmp);
+	}
+
+	75% {
+		transform: translateY(calc(#{$animateAmp} + 2px));
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@-webkit-keyframes conf {
+	25% {
+		-webkit-transform: translateY(-$animateAmp);
+	}
+
+	75% {
+		-webkit-transform: translateY(calc(#{$animateAmp} + 2px));
+	}
+
+	100% {
+		-webkit-transform: translateY(0px);
 	}
 }
 
@@ -207,6 +396,13 @@
 				-webkit-animation-iteration-count: 2;
 				-ms-animation-iteration-count: 2;
 			}
+		}
+
+		> li:nth-child(3):hover .conf li {
+			@include animation(conf, 1.9s, ease-in-out);
+			animation-iteration-count: 1;
+			-webkit-animation-iteration-count: 1;
+			-ms-animation-iteration-count: 1;
 		}
 	}
 }
@@ -351,7 +547,7 @@
 		padding: 25px 0 35px;
 		margin: 0 -25px;
 
-		li {
+		> li {
 			margin: 0 10px;
 
 			p {
@@ -467,10 +663,21 @@
 	    }
 
 	    .menu {
-	    	padding: 10px 0;
+    		padding: 15px 0;
 
-	    	li a {
-	    		font-size: 15px;
+    		li a {
+    			font-size: 20px;
+    		}
+    	}
+
+	    @media (max-height: 240px){
+
+	    	.menu {
+	    		padding: 10px 0;
+
+	    		li a {
+	    			font-size: 15px;
+	    		}
 	    	}
 	    }
     }
@@ -517,7 +724,7 @@
 	.adv-list {
 		display: block;
 
-		li {
+		> li {
 			position: relative;
 			width: 85%;
 			margin: 0;
@@ -588,3 +795,16 @@
 }
 
 
+@include mobile-min {
+
+	.home-page {
+
+		.socket {
+			padding-top: 235px;
+		}
+	}
+
+	.logo-team {
+		top: 125px;
+	}
+}

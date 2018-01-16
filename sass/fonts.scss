@@ -88,6 +88,18 @@ p {
     }
 }
 
+@include mobile-min {
+
+    body {
+        letter-spacing: 0;
+    }
+    
+    .title-1 {
+        line-height: 35px !important;
+        margin-bottom: 7px;
+    }
+}
+
 @font-face {
     font-family: "MyriadPro-Regular";
     src: url("fonts/MyriadPro-Regular.eot");

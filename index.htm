@@ -71,16 +71,16 @@
 
 									<ul class="icons">
 										<li>
-											<img width="23" src="images/ico-a-11.svg" alt="">
+											<img width="23" height="29" src="images/ico-a-11.svg" alt="">
 										</li>
 										<li>
-											<img width="33" src="images/ico-a-12.svg" alt="">
+											<img width="33" height="29" src="images/ico-a-12.svg" alt="">
 										</li>
 										<li>
-											<img width="27" src="images/ico-a-13.svg" alt="">
+											<img width="27" height="32" src="images/ico-a-13.svg" alt="">
 										</li>
 										<li>
-											<img width="30" src="images/ico-a-14.svg" alt="">
+											<img width="30" height="28" src="images/ico-a-14.svg" alt="">
 										</li>
 									</ul>
 								</div>
@@ -117,6 +117,19 @@
 							<div class="ico-wrap">
 								<div class="ico ico-3">
 									<img width="76" height="76" src="images/ico-a-3.svg" alt="">
+
+									<ul class="conf">
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
 								</div>
 							</div>
 
@@ -440,7 +453,7 @@
 		            document.querySelector("body").classList.add("loaded");
 		        }, 500);
 
-				let mobile = window.innerWidth < 767;
+				let mobile = window.innerWidth < 768;
 				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnAut = document.querySelector(".btn-aut");
@@ -454,6 +467,10 @@
 				btnMenu.addEventListener("click", function() {
 					body.classList.toggle("menu-open");
 					this.classList.toggle("active");
+
+					if (mobile){
+						window.scrollTo(0, 0);
+					}
 				});
 				
 				// Registration
@@ -498,7 +515,10 @@
 					});
 				});
 
-
+				(function(){
+			        if ( typeof NodeList.prototype.forEach === "function" ) return false;
+			        NodeList.prototype.forEach = Array.prototype.forEach;
+			    }());
 			});
 		</script>
 
