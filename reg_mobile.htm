@@ -135,7 +135,7 @@
 					<!-- Code Form -->
 					<div class="code-form animate-wrap">
 						<p class="text-o animate-slide">
-							Введите код подтверждения, отправленый в <br>
+							Введите код подтверждения, отправленный в <br>
 							SMS на указанный номер телефона
 						</p>
 
@@ -183,29 +183,16 @@
         <script src="./js/modernizr-custom.js"></script> 
 		<script>
 			window.addEventListener("load", function() {
-
-				setTimeout(function(){
-		            document.querySelector("body").classList.add("loaded");
-		        }, 500);
 		        
-				let mobile = window.innerWidth < 768;
-				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnCode = document.querySelector(".btn-code");
-				let btnClose = document.querySelectorAll(".btn-close");
-
 				let body = document.querySelector("body");
 				let popupOpen = document.querySelector(".popup.open");
 				let popupReg = document.querySelector(".popup-reg");
 
-				btnMenu.addEventListener("click", function() {
-					body.classList.toggle("menu-open");
-					this.classList.toggle("active");
-
-					if (mobile){
-						window.scrollTo(0, 0);
-					}
-				});
+				setTimeout(function(){
+		            body.classList.add("loaded");
+		        }, 500);
 
 				btnCode.addEventListener("click", function(e) {
 					e.preventDefault();
@@ -213,9 +200,6 @@
 					document.querySelector(".code-form").setAttribute("style", "display: block");
 					document.querySelector(".num-form").setAttribute("style", "display: none");
 				});
-
-			
-
 			});
 		</script>
 

@@ -47,6 +47,7 @@ body {
 
     .menu-open, .popup-open {
         overflow-y: auto;
+        height: auto;
     }
 }
 
@@ -287,10 +288,17 @@ $menuHtime: 0.4s;
 
 .no-touchevents .btn-menu-block {
 
-    &:hover .btn-menu > span {
+    &.hover .btn-menu > span {
 
         .menu-circle {
             @include animation(menuTimer, 0.6s, ease-in-out);
+        }
+    }
+
+    &.leave .btn-menu > span {
+
+        .menu-circle {
+            @include animation(menuTimerOut, 0.6s, ease-in-out);
         }
     }
 
@@ -318,8 +326,15 @@ $menuHtime: 0.4s;
     }
 }
 
-.no-touchevents .btn-close:hover .menu-circle {
-    @include animation(menuTimer, 0.6s, ease-in-out);
+.no-touchevents .btn-close {
+
+    &.hover .menu-circle {
+        @include animation(menuTimer, 0.6s, ease-in-out);
+    }
+
+    &.leave .menu-circle {
+        @include animation(menuTimerOut, 0.6s, ease-in-out);
+    }
 }
 
 
@@ -329,12 +344,31 @@ $menuHtime: 0.4s;
     }
 }
 
+@keyframes menuTimerOut {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 208; 
+        stroke-dashoffset: 208;
+    }
+}
+
 @-webkit-keyframes menuTimer {
     100% {
         stroke-dashoffset: 0;
     }
 }
 
+@-webkit-keyframes menuTimerOut {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 208; 
+        stroke-dashoffset: 208;
+    }
+}
 
 .menu-block, .popup {
     position: absolute;
@@ -605,9 +639,15 @@ body.popup-mobile {
 
 .popup {
     @include trans(0.5s);
+    position: fixed;
     display: none;
     background: none;
     z-index: 996;
+
+    @include minHeight {
+        position: absolute;
+        height: 600px;
+    }
 
     .popup-mobile & {
         display: block;
@@ -691,9 +731,22 @@ body.popup-mobile {
     }
 }
 
+.open .btn-close {
+    @include transform(translateX(-50%) translateY(0));
+    opacity: 1; 
+}
+
 .btn-close {
-    @extend .ctrHor;
+    @include transition(all, 11.5s, linear);
+    @include delay(1.5s);
+    @include transform(translateX(-50%) translateY(-100px));
+    left: 50%;
     z-index: 998;
+    opacity: 0;
+
+    .open & {
+        
+    }
 
     i {
         @include transform(translateY(-50%) translateX(-50%));
@@ -732,6 +785,10 @@ body.popup-mobile {
     display: inline-block;
     text-decoration: none;
     padding-left: 32px;
+
+    @include mobile-min {
+        font-size: 12px;
+    }
     
     &:before {
         @extend .ps;

@@ -33,7 +33,14 @@
 	}
 
 	.cabinet-right {
+		@extend .trans;
+		@include delay(0.5s);
 		width: 47%;
+		opacity: 0;
+
+		.loaded & {
+			opacity: 1;
+		}
 
 		.scroll-block {
 			height: 100%;
@@ -276,6 +283,7 @@
 		}
 
 		.btn-check {
+			@include border-rad(0px);
 			position: fixed;
 			width: auto;
 			bottom: 0;
@@ -329,8 +337,4 @@
 			}
 		}
 	}
-}
-
-@media (max-width: 400px) {
-
 }

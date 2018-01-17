@@ -449,29 +449,17 @@
 				    
 				// }, 1000);
 				
-				setTimeout(function(){
-		            document.querySelector("body").classList.add("loaded");
-		        }, 500);
-
 				let mobile = window.innerWidth < 768;
-				let btnMenu = document.querySelector(".btn-menu-block");
 				let btnReg = document.querySelector(".btn-reg");
 				let btnAut = document.querySelector(".btn-aut");
 				let btnCode = document.querySelectorAll(".btn-code");
-				let btnClose = document.querySelectorAll(".btn-close");
-
 				let body = document.querySelector("body");
 				let popupReg = document.querySelector(".popup-reg");
 				let popupAut = document.querySelector(".popup-aut");
 
-				btnMenu.addEventListener("click", function() {
-					body.classList.toggle("menu-open");
-					this.classList.toggle("active");
-
-					if (mobile){
-						window.scrollTo(0, 0);
-					}
-				});
+				setTimeout(function(){
+		            body.classList.add("loaded");
+		        }, 500);
 				
 				// Registration
 				btnReg.addEventListener("click", function() {
@@ -506,15 +494,6 @@
 					});
 				});
 				
-				// Popup Close
-				btnClose.forEach(function(closeItem){
-					closeItem.addEventListener("click", function(){
-						let popup = this.parentNode;
-						popup.classList.remove("open");
-						body.classList.remove("popup-open");
-					});
-				});
-
 				(function(){
 			        if ( typeof NodeList.prototype.forEach === "function" ) return false;
 			        NodeList.prototype.forEach = Array.prototype.forEach;

@@ -181,10 +181,25 @@
 
 @include mobile {
 
+	.rules-page .socket {
+		padding-bottom: 190px;
+	}
+
+	.title-row {
+		position: static;
+		min-height: 100%;
+	}
+
 	.btns-right {
+		position: absolute;
+		top: auto;
+		right: auto;
+		left: 0;
+		bottom: 15px;
 
 		.btn {
 			width: 100%;
+			margin-right: 0;
 		}
 	}
 

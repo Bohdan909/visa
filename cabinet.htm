@@ -91,7 +91,7 @@
 						</div>
 						<p class="animate-slide">
 							Для участия в акции осталось загрузить не менее 3 чеков. <br>
-							Обратите внимание, что за покупки у <a href="">наших партнеров</a> вы получаете двойные шансы
+							Обратите внимание, что за покупки у <a href="partners.htm">наших партнеров</a> вы получаете двойные шансы
 						</p>
 						<div class="btn btn-check animate-slide animate-slide">
 							<button>
@@ -179,7 +179,7 @@
 									</div>
 								</div>
 
-								<div class="cabinet-check-item">
+								<div class="cabinet-check-item animate-slide">
 									<section>
 										<div>Чек от 11 января</div>
 										<span>1 шанс : d8320</span>
@@ -301,7 +301,7 @@
 					<!-- Code Form -->
 					<div class="code-form">
 						<p class="text-o animate-slide">
-							Введите код подтверждения, отправленый в <br>
+							Введите код подтверждения, отправленный в <br>
 							SMS на указанный номер телефона
 						</p>
 
@@ -390,7 +390,7 @@
 					<!-- Code Form -->
 					<div class="code-form">
 						<p class="text-o animate-slide">
-							Введите код подтверждения, отправленый в <br>
+							Введите код подтверждения, отправленный в <br>
 							SMS на указанный номер телефона
 						</p>
 
@@ -583,25 +583,51 @@
 			</div>
 		</div><!-- / Add Check -->
 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>        
+		<script src="./js/perfect-scrollbar.jquery.min.js"></script>
+		<script src="./js/jquery.mousewheel.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/perfect-scrollbar.min.css" />
+
+		<script>
+			$(function(){
+
+				scrollBar();
+
+				function windowSize(){
+					scrollBar(true);
+				}
+
+			    function scrollBar(update){
+			        var $scroll = $(".scroll-block");
+
+			        if ($scroll.length && window.innerWidth > 767){
+			            
+			            if (update){
+			                $scroll.perfectScrollbar("update");
+			            } else {
+			                $scroll.perfectScrollbar({
+			                    wheelSpeed: 0.5,
+			                    wheelPropagation: false,
+			                    minScrollbarLength: 20
+			                }); 
+			            }
+			        }
+			    }
+			});
+		</script>
+
         <script src="./js/modernizr-custom.js"></script> 
 		<script>
-			window.addEventListener("load", ()=> {
-				setTimeout(function(){
-		            document.querySelector("body").classList.add("loaded");
-		        }, 500);
-		        
-				let mobile = window.innerWidth < 767;
-				let btnMenu = document.querySelector(".btn-menu-block");
+			window.addEventListener("load", function(){
+				
+				let mobile = window.innerWidth < 768;				
 				let btnCode = document.querySelectorAll(".btn-code");
-				let btnClose = document.querySelectorAll(".btn-close");
-
 				let body = document.querySelector("body");
 
-				btnMenu.addEventListener("click", function() {
-					body.classList.toggle("menu-open");
-					this.classList.toggle("active");
-				});
-				
+				setTimeout(function(){
+		            body.classList.add("loaded");
+		        }, 500);
+
 				
 				// Code
 				btnCode.forEach(function(btn){
@@ -615,20 +641,12 @@
 					});
 				});
 				
-				// Popup Close
-				btnClose.forEach(function(closeItem){
-					closeItem.addEventListener("click", function(){
-						let popup = this.parentNode;
-						popup.classList.remove("open");
-						body.classList.remove("popup-open");
-					});
-				});
-
+			
 				// Add Check
 				let btnCheck = document.querySelector(".btn-check");
 				let popupCheck = document.querySelector(".popup-check");
 
-				btnCheck.addEventListener("click", ()=> {
+				btnCheck.addEventListener("click", function(){
 					if (!mobile){
 						popupCheck.classList.add("open");
 						body.classList.add("popup-open");
@@ -641,7 +659,7 @@
 				let checkPanes = document.querySelectorAll(".check-pane");
 				let checkPanePhoto = document.querySelector(".check-pane-photo");
 				
-				btnAddPhoto.addEventListener("click", ()=> {
+				btnAddPhoto.addEventListener("click", function(){
 					checkPanes.forEach(function(pane){
 						pane.style.display = "none";
 					});
@@ -653,7 +671,7 @@
 				let btnEnter = document.querySelector(".btn-check-enter");
 				let checkPaneEnter = document.querySelector(".check-pane-enter");
 
-				btnEnter.addEventListener("click", ()=> {
+				btnEnter.addEventListener("click", function(){
 					checkPanes.forEach(function(pane){
 						pane.style.display = "none";
 					});

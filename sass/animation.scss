@@ -5,6 +5,7 @@
     ------------------- */  
 
 .animate-slide {
+    @extend .sm;
     opacity: 0;   
 
     .loaded & {

@@ -145,9 +145,9 @@
     }
 }
 
-
-.scroll.ps-container > .ps-scrollbar-y-rail { width: 3px; background: #e8e5e2; }
-.scroll.ps-container > .ps-scrollbar-x-rail { display: none !important; }
-.scroll.ps-container > .ps-scrollbar-y-rail .ps-scrollbar-y { width: 3px; background:#000; }    
+.scroll-block { position: relative !important; overflow: hidden !important; }
+.scroll-block.ps-container > .ps-scrollbar-y-rail { width: 4px; background: rgba(255,255,255, 0.1); }
+.scroll-block.ps-container > .ps-scrollbar-x-rail { display: none !important; }
+.scroll-block.ps-container > .ps-scrollbar-y-rail .ps-scrollbar-y { width: 4px; background: $yellow; }    
 
 

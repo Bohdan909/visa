@@ -14,6 +14,7 @@
 
 		.chance-image-inner {
 			@extend .ctrVert;
+			position: absolute;
 
 			img {
 				//width: 85%;
@@ -40,6 +41,7 @@
 
 		.chance-text-inner {
 			@extend .ctrVert;
+			position: absolute;
 		}
 
 		.title-1 {
@@ -146,13 +148,13 @@
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px){
+// @media (min-width: 768px) and (max-width: 1024px){
 
-	.chance-image-inner, .chance-text-inner {
-		position: absolute !important;
-		top: 48% !important;
-	}
-}
+// 	.chance-image-inner, .chance-text-inner {
+// 		position: absolute !important;
+// 		top: 48% !important;
+// 	}
+// }
 
 @include mobile {
 
@@ -170,6 +172,7 @@
 			.chance-text-inner, .chance-image-inner {
 				@include transform(translateY(0));
 				top: 0;
+				position: relative;
 			}
 		}
 

@@ -25,6 +25,10 @@
 		display: block;
 		background-color: rgba(0,0,0, 0.5);
 		z-index: 1;
+
+		@include minHeight {
+			height: 600px;
+		}
 	}
 
 	.socket {
@@ -770,6 +774,7 @@ $animateAmp: 3px;
 			}
 
 			ul {
+				@include flex(space-between);
 				margin: 0 -25px;
 				
 				li {
